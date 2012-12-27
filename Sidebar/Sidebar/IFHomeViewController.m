@@ -132,14 +132,13 @@
 }
 
 - (void)moveSideBarWithVelocity:(CGPoint)velocity {
-    // The velocity of the pan gesture, which is expressed in points per second. The velocity is broken into horizontal and vertical components.
+    // The velocity of the pan gesture is expressed in points per second. The velocity is broken into horizontal and vertical components.
 
     // The remaining distance to move and the velocity can be used to determine the animation duration to keep a consisten motion
     // The remaining distance depends if it is moving left or right (negative or positive)
     // The total distance moved could be calculated with the leftConstraintConstantOrigin and gesturePointOrigin and the last point
     
     // How long does it take to go the distance given the velocity?
-    
     // 100 points per second (velocity) would go 10 points (distance) in 0.1 seconds (duration)
     
     // 10 / 100 = 0.1
@@ -154,12 +153,13 @@
     if (velocity.x < 0.0) {
         // moving to min
         CGFloat distance = self.contentLeftConstraint.constant - kMinSideBarWidth;
-        CGFloat duration = distance / ABS(velocity.x);
+        CGFloat duration = MIN(kAnimationDuration, distance / ABS(velocity.x));
         [self hideSideBar:TRUE withDuration:duration];
     }
     else {
+        // moving to max
         CGFloat distance = kMaxSideBarWidth - self.contentLeftConstraint.constant;
-        CGFloat duration = distance / ABS(velocity.x);
+        CGFloat duration = MIN(kAnimationDuration, distance / ABS(velocity.x));
         [self showSideBar:TRUE withDuration:duration];
     }
 }
