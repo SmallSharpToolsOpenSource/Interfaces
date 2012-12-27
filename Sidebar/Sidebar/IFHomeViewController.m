@@ -145,13 +145,13 @@
     // 10 / 100 = 0.1
     // distance / velocity = duration
 
-    if (velocity.x == 0) {
+    if (velocity.x == 0.0) {
         // avoid divide by zero
         [self hideSideBar:TRUE];
         return;
     }
     
-    if (velocity.x < 0) {
+    if (velocity.x < 0.0) {
         // moving to min
         CGFloat distance = self.contentLeftConstraint.constant - kMinSideBarWidth;
         CGFloat duration = distance / ABS(velocity.x);
