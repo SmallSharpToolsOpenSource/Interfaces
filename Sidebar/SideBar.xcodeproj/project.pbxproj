@@ -43,7 +43,7 @@
 		26B4618D168BB16400CFB9D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26B4618F168BB16400CFB9D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26B46191168BB16400CFB9D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		26B46195168BB16400CFB9D8 /* Sidebar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sidebar-Info.plist"; sourceTree = "<group>"; };
+		26B46195168BB16400CFB9D8 /* SideBar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SideBar-Info.plist"; sourceTree = "<group>"; };
 		26B46197168BB16400CFB9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26B46199168BB16400CFB9D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		26B4619B168BB16400CFB9D8 /* Sidebar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sidebar-Prefix.pch"; sourceTree = "<group>"; };
@@ -53,9 +53,9 @@
 		26B461A1168BB16400CFB9D8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		26B461A3168BB16400CFB9D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		26B461A6168BB16400CFB9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		26B461B0168BB16400CFB9D8 /* SidebarTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SidebarTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26B461B0168BB16400CFB9D8 /* SideBar UI.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SideBar UI.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B461B1168BB16400CFB9D8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		26B461B9168BB16400CFB9D8 /* SidebarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SidebarTests-Info.plist"; sourceTree = "<group>"; };
+		26B461B9168BB16400CFB9D8 /* SideBarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SideBarTests-Info.plist"; sourceTree = "<group>"; };
 		26B461BB168BB16400CFB9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26B461BD168BB16400CFB9D8 /* SidebarTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SidebarTests.h; sourceTree = "<group>"; };
 		26B461BE168BB16400CFB9D8 /* SidebarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SidebarTests.m; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		26B4617E168BB16400CFB9D8 = {
 			isa = PBXGroup;
 			children = (
-				26B46193168BB16400CFB9D8 /* Sidebar */,
+				26B46193168BB16400CFB9D8 /* SideBar */,
 				26B461B7168BB16400CFB9D8 /* SidebarTests */,
 				26B4618C168BB16400CFB9D8 /* Frameworks */,
 				26B4618A168BB16400CFB9D8 /* Products */,
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				26B46189168BB16400CFB9D8 /* SiderBar UI.app */,
-				26B461B0168BB16400CFB9D8 /* SidebarTests.octest */,
+				26B461B0168BB16400CFB9D8 /* SideBar UI.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		26B46193168BB16400CFB9D8 /* Sidebar */ = {
+		26B46193168BB16400CFB9D8 /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
 				26B46194168BB16400CFB9D8 /* Supporting Files */,
@@ -132,13 +132,14 @@
 				26B4619D168BB16400CFB9D8 /* IFAppDelegate.m */,
 				26B461A5168BB16400CFB9D8 /* MainStoryboard.storyboard */,
 			);
+			name = SideBar;
 			path = Sidebar;
 			sourceTree = "<group>";
 		};
 		26B46194168BB16400CFB9D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				26B46195168BB16400CFB9D8 /* Sidebar-Info.plist */,
+				26B46195168BB16400CFB9D8 /* SideBar-Info.plist */,
 				26B46196168BB16400CFB9D8 /* InfoPlist.strings */,
 				26B46199168BB16400CFB9D8 /* main.m */,
 				26B4619B168BB16400CFB9D8 /* Sidebar-Prefix.pch */,
@@ -162,7 +163,7 @@
 		26B461B8168BB16400CFB9D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				26B461B9168BB16400CFB9D8 /* SidebarTests-Info.plist */,
+				26B461B9168BB16400CFB9D8 /* SideBarTests-Info.plist */,
 				26B461BA168BB16400CFB9D8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -186,9 +187,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26B46188168BB16400CFB9D8 /* Sidebar */ = {
+		26B46188168BB16400CFB9D8 /* SideBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26B461C2168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "Sidebar" */;
+			buildConfigurationList = 26B461C2168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "SideBar" */;
 			buildPhases = (
 				26B46185168BB16400CFB9D8 /* Sources */,
 				26B46186168BB16400CFB9D8 /* Frameworks */,
@@ -198,14 +199,14 @@
 			);
 			dependencies = (
 			);
-			name = Sidebar;
+			name = SideBar;
 			productName = Sidebar;
 			productReference = 26B46189168BB16400CFB9D8 /* SiderBar UI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		26B461AF168BB16400CFB9D8 /* SidebarTests */ = {
+		26B461AF168BB16400CFB9D8 /* SideBarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26B461C5168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "SidebarTests" */;
+			buildConfigurationList = 26B461C5168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "SideBarTests" */;
 			buildPhases = (
 				26B461AB168BB16400CFB9D8 /* Sources */,
 				26B461AC168BB16400CFB9D8 /* Frameworks */,
@@ -217,9 +218,9 @@
 			dependencies = (
 				26B461B6168BB16400CFB9D8 /* PBXTargetDependency */,
 			);
-			name = SidebarTests;
+			name = SideBarTests;
 			productName = SidebarTests;
-			productReference = 26B461B0168BB16400CFB9D8 /* SidebarTests.octest */;
+			productReference = 26B461B0168BB16400CFB9D8 /* SideBar UI.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -232,7 +233,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "SmallSharpTools LLC";
 			};
-			buildConfigurationList = 26B46183168BB16400CFB9D8 /* Build configuration list for PBXProject "Sidebar" */;
+			buildConfigurationList = 26B46183168BB16400CFB9D8 /* Build configuration list for PBXProject "SideBar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -244,8 +245,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26B46188168BB16400CFB9D8 /* Sidebar */,
-				26B461AF168BB16400CFB9D8 /* SidebarTests */,
+				26B46188168BB16400CFB9D8 /* SideBar */,
+				26B461AF168BB16400CFB9D8 /* SideBarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,7 +317,7 @@
 /* Begin PBXTargetDependency section */
 		26B461B6168BB16400CFB9D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 26B46188168BB16400CFB9D8 /* Sidebar */;
+			target = 26B46188168BB16400CFB9D8 /* SideBar */;
 			targetProxy = 26B461B5168BB16400CFB9D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -424,15 +425,15 @@
 		26B461C6168BB16400CFB9D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sidebar.app/Sidebar";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SideBar.app/SideBar";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sidebar/Sidebar-Prefix.pch";
-				INFOPLIST_FILE = "SidebarTests/SidebarTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SideBar/SideBar-Prefix.pch";
+				INFOPLIST_FILE = "SidebarTests/SideBarTests-Info.plist";
+				PRODUCT_NAME = "SideBar UI";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -441,15 +442,15 @@
 		26B461C7168BB16400CFB9D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sidebar.app/Sidebar";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SideBar.app/SideBar";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sidebar/Sidebar-Prefix.pch";
-				INFOPLIST_FILE = "SidebarTests/SidebarTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SideBar/SideBar-Prefix.pch";
+				INFOPLIST_FILE = "SidebarTests/SideBarTests-Info.plist";
+				PRODUCT_NAME = "SideBar UI";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -458,7 +459,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26B46183168BB16400CFB9D8 /* Build configuration list for PBXProject "Sidebar" */ = {
+		26B46183168BB16400CFB9D8 /* Build configuration list for PBXProject "SideBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26B461C0168BB16400CFB9D8 /* Debug */,
@@ -467,21 +468,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26B461C2168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "Sidebar" */ = {
+		26B461C2168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "SideBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26B461C3168BB16400CFB9D8 /* Debug */,
 				26B461C4168BB16400CFB9D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		26B461C5168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "SidebarTests" */ = {
+		26B461C5168BB16400CFB9D8 /* Build configuration list for PBXNativeTarget "SideBarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26B461C6168BB16400CFB9D8 /* Debug */,
 				26B461C7168BB16400CFB9D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
