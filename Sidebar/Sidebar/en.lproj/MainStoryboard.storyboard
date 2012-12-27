@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="IFHomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-kG-NFk" userLabel="Header Container View">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="hwl-Xq-oBD" kind="embed" identifier="HomeHeader" id="LS2-PU-xVW"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEW-Lr-ZbY" userLabel="SideBar Container View">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" type="user" id="PlA-K3-R5c"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="gxg-3E-1Js" kind="embed" identifier="HomeSidebar" id="1Ni-Rl-t2l"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQ7-kr-U6c" userLabel="Content Container View">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" type="user" id="fng-zB-mg7"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="0Km-mY-j7X" kind="embed" identifier="HomeContent" id="CEr-V5-Oox"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OQ7-kr-U6c" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" priority="750" type="user" id="004-BU-PRX"/>
+                            <constraint firstItem="OQ7-kr-U6c" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" priority="750" type="user" id="6dD-Pk-VAD"/>
+                            <constraint firstItem="pEW-Lr-ZbY" firstAttribute="leading" secondItem="3" secondAttribute="leading" priority="750" type="user" id="744-Xu-wHY"/>
+                            <constraint firstItem="pEW-Lr-ZbY" firstAttribute="top" secondItem="3" secondAttribute="top" priority="750" constant="44" type="user" id="DSW-Th-TcO"/>
+                            <constraint firstItem="pEW-Lr-ZbY" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" priority="750" type="user" id="FLw-o8-hMr"/>
+                            <constraint firstItem="OQ7-kr-U6c" firstAttribute="top" secondItem="pEW-Lr-ZbY" secondAttribute="top" priority="750" type="user" id="OJ8-j5-Fdb"/>
+                            <constraint firstAttribute="bottom" secondItem="Jc3-kG-NFk" secondAttribute="bottom" priority="750" constant="504" type="user" id="Qgq-NJ-j1Y"/>
+                            <constraint firstItem="Jc3-kG-NFk" firstAttribute="top" secondItem="3" secondAttribute="top" priority="750" type="user" id="Tpk-t6-bHH"/>
+                            <constraint firstItem="OQ7-kr-U6c" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="bV4-ZU-KAD"/>
+                            <constraint firstItem="Jc3-kG-NFk" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" priority="750" type="user" id="jeu-NA-w3u"/>
+                            <constraint firstItem="Jc3-kG-NFk" firstAttribute="leading" secondItem="3" secondAttribute="leading" priority="750" type="user" id="nWH-Mx-9S2"/>
+                            <constraint firstItem="pEW-Lr-ZbY" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" priority="750" type="user" id="x7x-pE-Lep"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Gnh-Wa-6Rt" appends="YES" id="ACM-CP-82Q"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="contentLeftConstraint" destination="bV4-ZU-KAD" id="kcX-nz-3aV"/>
+                        <outlet property="contentView" destination="OQ7-kr-U6c" id="k0K-O3-uRM"/>
+                        <outlet property="headerView" destination="Jc3-kG-NFk" id="fyd-Y8-gYj"/>
+                        <outlet property="panGestureRecognizer" destination="Gnh-Wa-6Rt" id="sSZ-92-koG"/>
+                        <outlet property="siderBarView" destination="pEW-Lr-ZbY" id="F6d-qS-ZF9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Gnh-Wa-6Rt">
+                    <connections>
+                        <action selector="handlePanGestureRecognizer:" destination="2" id="jzp-Vq-oBb"/>
+                        <outlet property="delegate" destination="2" id="LGu-yQ-yvo"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="153" y="0.0"/>
+        </scene>
+        <!--Header View Controller-->
+        <scene sceneID="H8a-Z2-ci4">
+            <objects>
+                <viewController id="hwl-Xq-oBD" customClass="IFHeaderViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="D6o-GP-3NA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zz-gq-25b">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="TQF-nP-X4s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="SideBar">
+                                    <color key="titleColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="siderBarButtonTapped:" destination="hwl-Xq-oBD" eventType="touchUpInside" id="PIc-CS-6Bt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Zz-gq-25b" firstAttribute="top" secondItem="D6o-GP-3NA" secondAttribute="top" type="default" id="0h4-Ft-umf"/>
+                            <constraint firstItem="0Zz-gq-25b" firstAttribute="bottom" secondItem="D6o-GP-3NA" secondAttribute="bottom" type="default" id="DDI-2M-WRV"/>
+                            <constraint firstItem="0Zz-gq-25b" firstAttribute="leading" secondItem="D6o-GP-3NA" secondAttribute="leading" type="default" id="OfS-b8-vhA"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hc2-tI-cGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="36"/>
+        </scene>
+        <!--Side Bar View Controller-->
+        <scene sceneID="zXB-se-SmU">
+            <objects>
+                <viewController id="gxg-3E-1Js" customClass="IFSideBarViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="q5z-d2-agv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SideBar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifb-rM-ytR">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" type="user" id="mmA-vS-KE6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4X-h9-rmN">
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="p4X-h9-rmN" firstAttribute="leading" secondItem="q5z-d2-agv" secondAttribute="leading" constant="200" id="81q-zt-LJh"/>
+                            <constraint firstItem="Ifb-rM-ytR" firstAttribute="leading" secondItem="q5z-d2-agv" secondAttribute="leading" constant="5" id="EQt-29-Ni1"/>
+                            <constraint firstItem="p4X-h9-rmN" firstAttribute="trailing" secondItem="q5z-d2-agv" secondAttribute="trailing" type="default" id="JIx-PH-DLq"/>
+                            <constraint firstItem="Ifb-rM-ytR" firstAttribute="top" secondItem="q5z-d2-agv" secondAttribute="top" constant="5" id="hqT-mu-6gu"/>
+                            <constraint firstItem="p4X-h9-rmN" firstAttribute="bottom" secondItem="q5z-d2-agv" secondAttribute="bottom" type="default" id="iy1-Sz-lMd"/>
+                            <constraint firstItem="p4X-h9-rmN" firstAttribute="top" secondItem="q5z-d2-agv" secondAttribute="top" type="default" id="rzh-WD-CLC"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDZ-KZ-EJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="207"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="OGI-qy-8Ld">
+            <objects>
+                <viewController id="0Km-mY-j7X" customClass="IFContentViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jL3-LK-KLY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-c1-3Ql" userLabel="Label">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" type="user" id="rxh-GR-wxu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DdU-Cp-0lm" userLabel="Red View">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DdU-Cp-0lm" secondAttribute="trailing" priority="750" constant="20" symbolic="YES" type="user" id="MHX-pa-Z8g"/>
+                            <constraint firstItem="DdU-Cp-0lm" firstAttribute="leading" secondItem="jL3-LK-KLY" secondAttribute="leading" priority="750" constant="20" symbolic="YES" type="user" id="R1w-j5-oya"/>
+                            <constraint firstItem="Aff-c1-3Ql" firstAttribute="leading" secondItem="jL3-LK-KLY" secondAttribute="leading" priority="750" constant="20" symbolic="YES" type="user" id="aKe-7g-CLC"/>
+                            <constraint firstItem="DdU-Cp-0lm" firstAttribute="top" secondItem="Aff-c1-3Ql" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" type="user" id="eVK-8a-deh"/>
+                            <constraint firstAttribute="bottom" secondItem="DdU-Cp-0lm" secondAttribute="bottom" priority="750" constant="445" type="user" id="iLi-LA-PFu"/>
+                            <constraint firstItem="Aff-c1-3Ql" firstAttribute="top" secondItem="jL3-LK-KLY" secondAttribute="top" priority="750" constant="20" symbolic="YES" type="user" id="plv-rz-qj4"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TD7-ez-DSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="207"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="IFContentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IFContentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handlePanGestureRecognizer:"/>
+                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="panGestureRecognizer" candidateClass="UIPanGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="IFHeaderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IFHeaderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="siderBarButtonTapped:"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="IFHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IFHomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handlePanGestureRecognizer:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="outlet" name="contentLeftConstraint" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="headerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="panGestureRecognizer" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="outlet" name="siderBarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="IFSideBarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IFSideBarViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
