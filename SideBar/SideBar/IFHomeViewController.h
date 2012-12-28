@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "IFHeaderViewController.h"
-//#import "IFContentViewController.h"
 
 @interface IFHomeViewController : UIViewController <IFHeaderDelegate>
 

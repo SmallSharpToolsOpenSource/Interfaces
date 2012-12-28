@@ -30,28 +30,20 @@
     CGPoint gesturePointOrigin;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    leftConstraintConstantOrigin = self.contentLeftConstraint.constant;
+//    leftConstraintConstantOrigin = self.contentLeftConstraint.constant;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DebugLog(@"segue.identifier: %@", segue.identifier);
+    
+    if ([@"HomeHeader" isEqualToString:segue.identifier]) {
+        NSAssert([segue.destinationViewController isKindOfClass:[IFHeaderViewController class]], @"Destination VC must be the Header VC");
+        IFHeaderViewController *headerVC = (IFHeaderViewController *)segue.destinationViewController;
+        headerVC.delegate = self;
+    }
 }
 
 #pragma mark - User Actions
@@ -87,7 +79,8 @@
 #pragma mark -
 
 - (void)hideSideBar:(BOOL)animated withDuration:(CGFloat)duration {
-    [UIView animateWithDuration:duration animations:^{
+    UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear;
+    [UIView animateWithDuration:duration delay:0.0 options:options animations:^{
         self.contentLeftConstraint.constant = kMinSideBarWidth;
         [self.contentView setNeedsLayout];
         [self.contentView layoutIfNeeded];
@@ -100,7 +93,8 @@
 }
 
 - (void)showSideBar:(BOOL)animated withDuration:(CGFloat)duration {
-    [UIView animateWithDuration:duration animations:^{
+    UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear;
+    [UIView animateWithDuration:duration delay:0.0 options:options animations:^{
         self.contentLeftConstraint.constant = kMaxSideBarWidth;
         [self.contentView setNeedsLayout];
         [self.contentView layoutIfNeeded];
@@ -175,11 +169,15 @@
 #pragma mark -
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    return TRUE;
+    if ([self.panGestureRecognizer isEqual:gestureRecognizer]) {
+        return TRUE;
+    }
+    
+    return FALSE;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+        shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
 	return NO;
 }
 

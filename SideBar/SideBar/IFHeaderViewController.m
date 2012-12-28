@@ -14,27 +14,9 @@
 
 @implementation IFHeaderViewController
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if (self.delegate == nil && [self.parentViewController conformsToProtocol:@protocol(IFHeaderDelegate)]) {
-        self.delegate = (id<IFHeaderDelegate>) self.parentViewController;
-    }
-    
-    NSAssert(self.delegate != nil, @"Delegate must be defined!");
+- (void)viewDidLoad {
+    [super viewDidLoad];
+//    DebugLog(@"viewDidLoad (%@)", NSStringFromClass([self class]));
 }
 
 #pragma mark - User Actions

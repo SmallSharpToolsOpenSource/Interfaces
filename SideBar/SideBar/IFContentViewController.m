@@ -10,28 +10,31 @@
 
 @interface IFContentViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *blueView;
+@property (weak, nonatomic) IBOutlet UILabel *blueLabel;
+
 @end
 
 @implementation IFContentViewController {
     CGPoint gesturePointOrigin;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    DebugLog(@"viewWillAppear");
+    
+    for (NSLayoutConstraint *constraint in self.blueView.constraints) {
+        DebugLog(@"Constraint: %@", constraint);
+        if (constraint.constant == 100 || constraint.constant == 240) {
+            constraint.constant = 400.0;
+        }
     }
-    return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.scrollView.contentSize = CGSizeMake(410.0, 410.0);
+    
+//    [self.view setNeedsLayout];
+//    [self.view layoutIfNeeded];
 }
 
 @end
