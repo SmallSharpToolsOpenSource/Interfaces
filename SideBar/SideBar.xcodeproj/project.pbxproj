@@ -26,7 +26,6 @@
 		26B461CE168BB3FC00CFB9D8 /* IFHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B461CD168BB3FC00CFB9D8 /* IFHeaderViewController.m */; };
 		26B461D1168BB41300CFB9D8 /* IFSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B461D0168BB41300CFB9D8 /* IFSideBarViewController.m */; };
 		26B461D4168BB43C00CFB9D8 /* IFContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B461D3168BB43C00CFB9D8 /* IFContentViewController.m */; };
-		26B4620A168CB02600CFB9D8 /* IFContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B46209168CB02600CFB9D8 /* IFContainerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +67,6 @@
 		26B461D0168BB41300CFB9D8 /* IFSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFSideBarViewController.m; sourceTree = "<group>"; };
 		26B461D2168BB43C00CFB9D8 /* IFContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFContentViewController.h; sourceTree = "<group>"; };
 		26B461D3168BB43C00CFB9D8 /* IFContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFContentViewController.m; sourceTree = "<group>"; };
-		26B46208168CB02600CFB9D8 /* IFContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFContainerView.h; path = SideBar/IFContainerView.h; sourceTree = SOURCE_ROOT; };
-		26B46209168CB02600CFB9D8 /* IFContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFContainerView.m; path = SideBar/IFContainerView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +188,6 @@
 		26B46207168CB00700CFB9D8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				26B46208168CB02600CFB9D8 /* IFContainerView.h */,
-				26B46209168CB02600CFB9D8 /* IFContainerView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -314,7 +309,6 @@
 				26B461CE168BB3FC00CFB9D8 /* IFHeaderViewController.m in Sources */,
 				26B461D1168BB41300CFB9D8 /* IFSideBarViewController.m in Sources */,
 				26B461D4168BB43C00CFB9D8 /* IFContentViewController.m in Sources */,
-				26B4620A168CB02600CFB9D8 /* IFContainerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
