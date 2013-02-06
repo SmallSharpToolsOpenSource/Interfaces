@@ -26,6 +26,7 @@
 		26B461CE168BB3FC00CFB9D8 /* IFHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B461CD168BB3FC00CFB9D8 /* IFHeaderViewController.m */; };
 		26B461D1168BB41300CFB9D8 /* IFSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B461D0168BB41300CFB9D8 /* IFSideBarViewController.m */; };
 		26B461D4168BB43C00CFB9D8 /* IFContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B461D3168BB43C00CFB9D8 /* IFContentViewController.m */; };
+		52A910FB16C2215200873741 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A910FA16C2215200873741 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		26B461D0168BB41300CFB9D8 /* IFSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFSideBarViewController.m; sourceTree = "<group>"; };
 		26B461D2168BB43C00CFB9D8 /* IFContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFContentViewController.h; sourceTree = "<group>"; };
 		26B461D3168BB43C00CFB9D8 /* IFContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFContentViewController.m; sourceTree = "<group>"; };
+		52A910FA16C2215200873741 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A910FB16C2215200873741 /* QuartzCore.framework in Frameworks */,
 				26B4618E168BB16400CFB9D8 /* UIKit.framework in Frameworks */,
 				26B46190168BB16400CFB9D8 /* Foundation.framework in Frameworks */,
 				26B46192168BB16400CFB9D8 /* CoreGraphics.framework in Frameworks */,
@@ -96,6 +99,7 @@
 		26B4617E168BB16400CFB9D8 = {
 			isa = PBXGroup;
 			children = (
+				52A910FA16C2215200873741 /* QuartzCore.framework */,
 				26B46193168BB16400CFB9D8 /* SideBar */,
 				26B461B7168BB16400CFB9D8 /* SidebarTests */,
 				26B4618C168BB16400CFB9D8 /* Frameworks */,

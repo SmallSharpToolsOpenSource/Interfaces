@@ -7,6 +7,7 @@
 //
 
 #import "IFHomeViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kMinSideBarWidth        0.0
 #define kMaxSideBarWidth        200.0
@@ -85,6 +86,20 @@
         [self.contentView setNeedsLayout];
         [self.contentView layoutIfNeeded];
     } completion:^(BOOL finished) {
+        
+        
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"position.x"];
+        
+        anim.fromValue = [NSNumber numberWithInt:0];
+        anim.toValue = [NSNumber numberWithInt:7];
+        anim.duration = 0.15;
+        anim.autoreverses = YES;
+        anim.repeatCount = 1;
+        anim.additive = YES;
+        anim.fillMode = kCAFillModeForwards;
+        anim.removedOnCompletion = NO;
+        [self.contentView.layer addAnimation:anim forKey:@"myAnimation"];
+
     }];
 }
 
@@ -99,6 +114,19 @@
         [self.contentView setNeedsLayout];
         [self.contentView layoutIfNeeded];
     } completion:^(BOOL finished) {
+        
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"position.x"];
+        
+        anim.fromValue = [NSNumber numberWithInt:0];
+        anim.toValue = [NSNumber numberWithInt:-7];
+        anim.duration = 0.15;
+        anim.autoreverses = YES;
+        anim.repeatCount = 1;
+        anim.additive = YES;
+        anim.fillMode = kCAFillModeForwards;
+        anim.removedOnCompletion = NO;
+        [self.contentView.layer addAnimation:anim forKey:@"myAnimation"];
+
     }];
 }
 
