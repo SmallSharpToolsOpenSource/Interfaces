@@ -14,11 +14,6 @@
 
 @implementation IFHeaderViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-//    DebugLog(@"viewDidLoad (%@)", NSStringFromClass([self class]));
-}
-
 #pragma mark - User Actions
 #pragma mark -
 

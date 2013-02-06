@@ -38,8 +38,6 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    DebugLog(@"segue.identifier: %@", segue.identifier);
-    
     if ([@"HomeHeader" isEqualToString:segue.identifier]) {
         NSAssert([segue.destinationViewController isKindOfClass:[IFHeaderViewController class]], @"Destination VC must be the Header VC");
         IFHeaderViewController *headerVC = (IFHeaderViewController *)segue.destinationViewController;

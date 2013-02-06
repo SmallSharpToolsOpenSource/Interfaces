@@ -23,18 +23,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    DebugLog(@"viewWillAppear");
-    
     for (NSLayoutConstraint *constraint in self.blueView.constraints) {
-        DebugLog(@"Constraint: %@", constraint);
         if (constraint.constant == 100 || constraint.constant == 240) {
             constraint.constant = 400.0;
         }
     }
     self.scrollView.contentSize = CGSizeMake(410.0, 410.0);
-    
-//    [self.view setNeedsLayout];
-//    [self.view layoutIfNeeded];
 }
 
 @end
