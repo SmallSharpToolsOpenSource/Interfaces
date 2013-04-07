@@ -2,15 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MultipleStoryboards/MultipleStoryboards.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TextAllTheThings/TextAllTheThings.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:README.md">
    </FileRef>
    <FileRef
       location = "group:SideBar/SideBar.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MultipleStoryboards/MultipleStoryboards.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TextAllTheThings/TextAllTheThings.xcodeproj">
    </FileRef>
 </Workspace>
