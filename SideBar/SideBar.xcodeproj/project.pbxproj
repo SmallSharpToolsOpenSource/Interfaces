@@ -99,7 +99,6 @@
 		26B4617E168BB16400CFB9D8 = {
 			isa = PBXGroup;
 			children = (
-				52A910FA16C2215200873741 /* QuartzCore.framework */,
 				26B46193168BB16400CFB9D8 /* SideBar */,
 				26B461B7168BB16400CFB9D8 /* SidebarTests */,
 				26B4618C168BB16400CFB9D8 /* Frameworks */,
@@ -119,10 +118,11 @@
 		26B4618C168BB16400CFB9D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26B4618D168BB16400CFB9D8 /* UIKit.framework */,
-				26B4618F168BB16400CFB9D8 /* Foundation.framework */,
 				26B46191168BB16400CFB9D8 /* CoreGraphics.framework */,
+				26B4618F168BB16400CFB9D8 /* Foundation.framework */,
+				52A910FA16C2215200873741 /* QuartzCore.framework */,
 				26B461B1168BB16400CFB9D8 /* SenTestingKit.framework */,
+				26B4618D168BB16400CFB9D8 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
