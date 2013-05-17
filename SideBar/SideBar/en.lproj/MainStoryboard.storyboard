@@ -61,7 +61,7 @@
                         <outlet property="contentView" destination="OQ7-kr-U6c" id="k0K-O3-uRM"/>
                         <outlet property="headerView" destination="Jc3-kG-NFk" id="fyd-Y8-gYj"/>
                         <outlet property="panGestureRecognizer" destination="Gnh-Wa-6Rt" id="sSZ-92-koG"/>
-                        <outlet property="siderBarView" destination="pEW-Lr-ZbY" id="F6d-qS-ZF9"/>
+                        <outlet property="sidebarView" destination="pEW-Lr-ZbY" id="d2T-ac-fv6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -247,14 +247,12 @@
         <class className="IFHeaderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IFHeaderViewController.h"/>
             <relationships>
-                <relationship kind="action" name="siderBarButtonTapped:"/>
                 <relationship kind="outlet" name="delegate"/>
             </relationships>
         </class>
         <class className="IFHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IFHomeViewController.h"/>
             <relationships>
-                <relationship kind="action" name="handlePanGestureRecognizer:" candidateClass="UIPanGestureRecognizer"/>
                 <relationship kind="outlet" name="contentLeftConstraint" candidateClass="NSLayoutConstraint"/>
                 <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="headerView" candidateClass="UIView"/>

@@ -17,7 +17,7 @@
 @interface IFHomeViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
-@property (weak, nonatomic) IBOutlet UIView *siderBarView;
+@property (weak, nonatomic) IBOutlet UIView *sidebarView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGestureRecognizer;
