@@ -23,8 +23,6 @@
 @implementation SSTStatusView
 
 + (SSTStatusView *)loadFromNibIntoSuperview:(UIView *)superview {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    
     CGRect frame = CGRectMake(0.0, 0.0, CGRectGetWidth(superview.frame), 20.0);
     SSTStatusView *statusView = [[SSTStatusView alloc] initWithFrame:frame];
     statusView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -44,8 +42,6 @@
     
     [superview addSubview:statusView];
     [superview bringSubviewToFront:statusView];
-    
-    DebugLog(@"subviews: %@", statusView.subviews);
     
     MAAssert(statusView.subviews.count, @"Status View should have subviews");
     
@@ -73,8 +69,6 @@
 }
 
 - (void)displayStatus:(NSString *)status withCompletionBlock:(void (^)())completionBlock {
-    DebugLog(@"%@: Status: %@", NSStringFromSelector(_cmd), status);
-    
     self.statusLabel.text = status;
     self.statusViewTopConstraint.constant = -20.0;
     [self.superview bringSubviewToFront:self];
