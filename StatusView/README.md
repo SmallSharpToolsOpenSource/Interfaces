@@ -14,7 +14,9 @@ the value of the frame using the origin or size properties. Now changing a
 constant value on a constraint will cause the position change. One gotcha is
 it is necessary to call ```setNeedsLayout``` within the animation block on the view
 which is moving. Otherwise it will jump to the position suddenly instead of
-moving gradually to the position over the animation duration.
+moving gradually to the position over the animation duration. It may also be necessary
+to call ```layoutIfNeeded``` which is done redundantly in this project to ensure
+animations occur as intended.
 
 If you do see sudden jumping and you are calling ```setNeedsLayout``` you may be
 calling it on the wrong view. Double check that it is calling ```setNeedsLayout``` 
@@ -46,6 +48,27 @@ In order to detail what is happening I created the ```logDeviceOrientation```
 method to log out various details. This method could be called in
 ```viewWillAppear``` and in the ```willAnimateRotationToInterfaceOrientation:duration:```
 methods to reveal what is happening.
+
+It appears that constaints do a better job at handling changing in position during
+orientantion changes. When the blue box is moved using just a frame the position
+after an orientation change needs to be asserted again otherwise it moves off to
+an unexepected position. Nothing needed to be done about the red box which is
+controlled by constraints.
+
+## Strange Behavior
+
+The status view which appears by coming into view from the top, showing for a moment
+and then moving out of view did not work with changing orientations. It would always
+default to going out of view with the contant value of -20. To ensure the value stayed
+as intended a boolean value is used to set the intended position and assert that position
+when the orientation notification fires.
+
+Once the rotation notification fired and the contant value was set based on the boolean
+value it seemed to have a side effect on the hiding animation, which used a delay value
+as a part of the animation. Setting that value may have canceled the animation so it has
+been changed to have show and hide methods with completion blocks so the animation is not
+disturbed due to a change in the value when the device is rotated and constant is set.
+The boolean value helps to assert the proper value and maintains the intended behavior.
 
 License: BSD  
 Credits: Brennan Stehling  

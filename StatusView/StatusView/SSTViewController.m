@@ -66,9 +66,6 @@
     else {
         self.blueBox.frame = [self blueBoxUpFrame];
     }
-    
-    [self.redBox setNeedsLayout];
-    [self.redBox layoutIfNeeded];
 }
 
 - (void)addBluebox {
@@ -78,15 +75,12 @@
     
     isBlueDown = FALSE;
     CGRect frame = [self blueBoxUpFrame];
-    LOG_FRAME(@"blue box", frame);
     UIView *blueBox = [[UIView alloc] initWithFrame:frame];
     blueBox.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
     blueBox.translatesAutoresizingMaskIntoConstraints = YES; // default
     blueBox.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [self.view addSubview:blueBox];
     
-    LOG_FRAME(@"blue box", blueBox.frame);
-
     MAAssert(blueBox.constraints.count == 0, @"There should be no constraints");
     
     self.blueBox = blueBox;
@@ -176,9 +170,8 @@
 }
 
 - (void)displayStatusMessages {
-    
     [self.statusView displayStatus:@"Hello!" withCompletionBlock:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             [self.statusView displayStatus:@"Goodbye!" withCompletionBlock:^{
                 // start again
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{

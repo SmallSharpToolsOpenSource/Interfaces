@@ -20,7 +20,27 @@
 
 @end
 
-@implementation SSTStatusView
+@implementation SSTStatusView {
+    BOOL isStatusHidden;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIDeviceOrientationDidChangeNotification
+                                                  object:nil];
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(deviceOrientationDidChangeNotification:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil];
+    }
+    return self;
+}
 
 + (SSTStatusView *)loadFromNibIntoSuperview:(UIView *)superview {
     CGRect frame = CGRectMake(0.0, 0.0, CGRectGetWidth(superview.frame), 20.0);
@@ -69,27 +89,94 @@
 }
 
 - (void)displayStatus:(NSString *)status withCompletionBlock:(void (^)())completionBlock {
+//    DebugLog(@"%@, %@", NSStringFromSelector(_cmd), status);
+    
     self.statusLabel.text = status;
     self.statusViewTopConstraint.constant = -20.0;
     [self.superview bringSubviewToFront:self];
     [self setNeedsLayout];
     [self layoutIfNeeded];
     self.hidden = FALSE;
+    isStatusHidden = TRUE;
     
-    [UIView animateWithDuration:0.5 animations:^{
+    // during rotation the constant value on the key constraint is set to ensure the position is
+    // correct, which causes a side effect on the animation if an animation block uses a delay value,
+    // so instead GCD is used for the delay and the show/hide sequence is broken into 2 parts.
+    // it now works reliably.
+    
+    [self showStatusWithCompletionBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self hideStatusWithCompletionBlock:^{
+                if (completionBlock) {
+                    completionBlock();
+                }
+            }];
+        });
+    }];
+    
+    // animating with a delay causes trouble related orientation changes so this code has been commented out
+//    [UIView animateWithDuration:0.5 delay:1.0 options:options animations:^{
+//        self.statusViewTopConstraint.constant = 0.0;
+//        [self setNeedsLayout];
+//        [self layoutIfNeeded];
+//    } completion:^(BOOL finished) {
+//        isStatusHidden = FALSE;
+//        DebugLog(@"setting currentTopConstant to -20.0");
+//        [UIView animateWithDuration:0.5 delay:3.0 options:options animations:^{
+//            self.statusViewTopConstraint.constant = -20.0;
+//            [self setNeedsLayout];
+//            [self layoutIfNeeded];
+//        } completion:^(BOOL finished) {
+//            isStatusHidden = TRUE;
+//            if (completionBlock) {
+//                completionBlock();
+//            }
+//        }];
+//    }];
+}
+
+- (void)showStatusWithCompletionBlock:(void (^)())completionBlock {
+    UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut;
+    [UIView animateWithDuration:0.5 delay:0.0 options:options animations:^{
         self.statusViewTopConstraint.constant = 0.0;
         [self setNeedsLayout];
+        [self layoutIfNeeded];
     } completion:^(BOOL finished) {
-        UIViewAnimationOptions options = UIViewAnimationOptionAllowUserInteraction;
-        [UIView animateWithDuration:0.5 delay:3.0 options:options animations:^{
-            self.statusViewTopConstraint.constant = -20.0;
-            [self setNeedsLayout];
-        } completion:^(BOOL finished) {
-            if (completionBlock) {
-                completionBlock();
-            }
-        }];
+        isStatusHidden = FALSE;
+        if (completionBlock) {
+            completionBlock();
+        }
     }];
+}
+
+- (void)hideStatusWithCompletionBlock:(void (^)())completionBlock {
+    UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut;
+    [UIView animateWithDuration:0.5 delay:0.0 options:options animations:^{
+        self.statusViewTopConstraint.constant = -20.0;
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        isStatusHidden = TRUE;
+        if (completionBlock) {
+            completionBlock();
+        }
+    }];
+}
+
+#pragma mark - Logging
+#pragma mark -
+
+- (void)logConstraint {
+    DebugLog(@"top constant: %f", self.statusViewTopConstraint.constant);
+}
+
+#pragma mark - Notifications
+#pragma mark -
+
+- (void)deviceOrientationDidChangeNotification:(NSNotification *)notification {
+    self.statusViewTopConstraint.constant = isStatusHidden ? -20.0 : 0.0;
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 @end
