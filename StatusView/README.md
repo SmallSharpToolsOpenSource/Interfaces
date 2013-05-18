@@ -7,8 +7,7 @@ Additionally, there are 2 other views which are placed into the parent view to s
 how layout and animations can work with a view without constraints and one with
 constraints while also handling orientation changes.
 
-Important Notes
-===============
+# Important Notes
 
 Animating a view to a different position before constraints was done by changing
 the value of the frame using the origin or size properties. Now changing a
@@ -20,6 +19,8 @@ moving gradually to the position over the animation duration.
 If you do see sudden jumping and you are calling setNeedsLayout you may be
 calling it on the wrong view. Double check that it is calling setNeedsLayout 
 on the view affected by that constraint.
+
+## Rotation & Orientation
 
 Rotation to a different orientation was tricky. First the classic gotcha
 is the fact that the width and height stay the same in landscape mode, 
