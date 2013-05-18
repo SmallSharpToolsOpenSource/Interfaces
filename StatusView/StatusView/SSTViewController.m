@@ -14,45 +14,61 @@
 
 @property (weak, nonatomic) SSTStatusView *statusView;
 
+@property (weak, nonatomic) UIView *redBox;
+@property (weak, nonatomic) UIView *blueBox;
+
+@property (weak, nonatomic) NSLayoutConstraint *centerYConstraint;
+
 @end
 
-@implementation SSTViewController
+@implementation SSTViewController {
+    BOOL isBlueDown;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self addBluebox];
-    [self addRedBox];
-    
+    [self addBluebox]; // frame only
+    [self addRedBox]; // constraints
     self.statusView = [SSTStatusView loadFromNibIntoSuperview:self.view];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (isBlueDown) {
+        self.blueBox.frame = [self blueBoxDownFrame];
+    }
+    else {
+        self.blueBox.frame = [self blueBoxUpFrame];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self displayStatusMessages];
+        [self moveBoxes];
     });
 }
 
 #pragma mark - Rotation
 #pragma mark -
 
-// Note: The status view goes out of view during rotation and does not come back into view (the attempts below did not fix it)
+// Note: The status view goes out of view during rotation and does not come back into view
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
-    [self.statusView setNeedsLayout];
-    [self.statusView layoutIfNeeded];
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-
-    [self.statusView setNeedsLayout];
-    [self.statusView layoutIfNeeded];
+    if (isBlueDown) {
+        self.blueBox.frame = [self blueBoxDownFrame];
+    }
+    else {
+        self.blueBox.frame = [self blueBoxUpFrame];
+    }
+    
+    [self.redBox setNeedsLayout];
+    [self.redBox layoutIfNeeded];
 }
 
 - (void)addBluebox {
@@ -60,11 +76,20 @@
     
     // The blue box is centered and a little larger than the red box. It stays centered on rotation.
     
-    UIView *blueBox = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.view.frame) / 2) - 60.0, (CGRectGetHeight(self.view.frame) / 2) - 60.0, 120.0, 120.0)];
+    isBlueDown = FALSE;
+    CGRect frame = [self blueBoxUpFrame];
+    LOG_FRAME(@"blue box", frame);
+    UIView *blueBox = [[UIView alloc] initWithFrame:frame];
     blueBox.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
     blueBox.translatesAutoresizingMaskIntoConstraints = YES; // default
     blueBox.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [self.view addSubview:blueBox];
+    
+    LOG_FRAME(@"blue box", blueBox.frame);
+
+    MAAssert(blueBox.constraints.count == 0, @"There should be no constraints");
+    
+    self.blueBox = blueBox;
 }
 
 - (void)addRedBox {
@@ -83,6 +108,7 @@
                                                                             toItem:redBox.superview attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
     NSLayoutConstraint *centerYConstraint = [NSLayoutConstraint constraintWithItem:redBox attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual
                                                                             toItem:redBox.superview attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
+    self.centerYConstraint = centerYConstraint;
     
     [redBox.superview addConstraints:@[centerXConstraint, centerYConstraint]];
     
@@ -93,6 +119,60 @@
                                                                            toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:100.0];
     
     [redBox addConstraints:@[widthConstraint, heightConstraint]];
+    
+    self.redBox = redBox;
+}
+
+- (void)moveBoxes {
+    isBlueDown = TRUE;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.centerYConstraint.constant = -50;
+        [self.redBox setNeedsLayout];
+        [self.redBox layoutIfNeeded];
+        self.blueBox.frame = [self blueBoxDownFrame];
+    } completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            isBlueDown = FALSE;
+            [UIView animateWithDuration:0.5 animations:^{
+                self.centerYConstraint.constant = 0;
+                [self.redBox setNeedsLayout];
+                [self.redBox layoutIfNeeded];
+                self.blueBox.frame = [self blueBoxUpFrame];
+            } completion:^(BOOL finished) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    [self moveBoxes];
+                });
+            }];
+        });
+    }];
+}
+
+- (CGRect)blueBoxDownFrame {
+    CGRect frame = CGRectMake(0, 0, 120, 120);
+    if (!UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
+        frame.origin.x = (CGRectGetWidth(self.view.frame) / 2) - (CGRectGetWidth(self.blueBox.frame) / 2);
+        frame.origin.y = (CGRectGetHeight(self.view.frame) / 2) - (CGRectGetHeight(self.blueBox.frame) / 2) + 60.0;
+    }
+    else {
+        frame.origin.x = (CGRectGetHeight(self.view.frame) / 2) - (CGRectGetHeight(self.blueBox.frame) / 2);
+        frame.origin.y = (CGRectGetWidth(self.view.frame) / 2) - (CGRectGetWidth(self.blueBox.frame) / 2) + 60.0;
+    }
+    
+    return frame;
+}
+
+- (CGRect)blueBoxUpFrame {
+    CGRect frame = CGRectMake(0.0, 0.0, 120, 120);
+    if (!UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
+        frame.origin.x = (CGRectGetWidth(self.view.frame) / 2) - (CGRectGetWidth(self.blueBox.frame) / 2);
+        frame.origin.y = (CGRectGetHeight(self.view.frame) / 2) - (CGRectGetHeight(self.blueBox.frame) / 2);
+    }
+    else {
+        frame.origin.x = (CGRectGetHeight(self.view.frame) / 2) - (CGRectGetHeight(self.blueBox.frame) / 2);
+        frame.origin.y = (CGRectGetWidth(self.view.frame) / 2) - (CGRectGetWidth(self.blueBox.frame) / 2);
+    }
+    
+    return frame;
 }
 
 - (void)displayStatusMessages {
@@ -108,6 +188,37 @@
         });
     }];
     
+}
+
+- (void)logDeviceOrientation {
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    
+    DebugLog(@"Is Portrait (Interface): %@", UIInterfaceOrientationIsPortrait(orientation) ? @"YES" : @"NO");
+    DebugLog(@"Is Landscape (Interface): %@", UIInterfaceOrientationIsLandscape(orientation) ? @"YES" : @"NO");
+    DebugLog(@"Is Portrait (Device): %@", UIDeviceOrientationIsPortrait(orientation) ? @"YES" : @"NO");
+    DebugLog(@"Is Landscape (Device): %@", UIDeviceOrientationIsLandscape(orientation) ? @"YES" : @"NO");
+    
+    if (orientation == UIDeviceOrientationUnknown) {
+        DebugLog(@"Orientation is Unknown");
+    }
+    else if (orientation == UIDeviceOrientationPortrait) {
+        DebugLog(@"Orientation is Portrait");
+    }
+    else if (orientation == UIDeviceOrientationPortraitUpsideDown) {
+        DebugLog(@"Orientation is PortraitUpsideDown");
+    }
+    else if (orientation == UIDeviceOrientationLandscapeLeft) {
+        DebugLog(@"Orientation is LandscapeLeft");
+    }
+    else if (orientation == UIDeviceOrientationLandscapeRight) {
+        DebugLog(@"Orientation is LandscapeRight");
+    }
+    else if (orientation == UIDeviceOrientationFaceUp) {
+        DebugLog(@"Orientation is FaceUp");
+    }
+    else if (orientation == UIDeviceOrientationFaceDown) {
+        DebugLog(@"Orientation is FaceDown");
+    }
 }
 
 @end

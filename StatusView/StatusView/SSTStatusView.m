@@ -13,7 +13,7 @@
 
 @interface SSTStatusView ()
 
-@property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @property (weak, nonatomic) NSLayoutConstraint *statusViewTopConstraint;
