@@ -79,13 +79,11 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.statusViewTopConstraint.constant = 0.0;
         [self setNeedsLayout];
-        [self layoutIfNeeded];
     } completion:^(BOOL finished) {
         UIViewAnimationOptions options = UIViewAnimationOptionAllowUserInteraction;
         [UIView animateWithDuration:0.5 delay:3.0 options:options animations:^{
             self.statusViewTopConstraint.constant = -20.0;
             [self setNeedsLayout];
-            [self layoutIfNeeded];
         } completion:^(BOOL finished) {
             if (completionBlock) {
                 completionBlock();
