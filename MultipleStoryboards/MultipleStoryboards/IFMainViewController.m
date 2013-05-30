@@ -8,6 +8,9 @@
 
 #import "IFMainViewController.h"
 
+#pragma mark - Class Extension
+#pragma mark -
+
 @interface IFMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *storyboards;
@@ -42,8 +45,8 @@
         DebugLog(@"Reusing %@", name);
     }
     
-    UIViewController *initialSettingsVC = [storyboard instantiateInitialViewController];
-    [self.navigationController pushViewController:initialSettingsVC animated:TRUE];
+    UIViewController *initialVC = [storyboard instantiateInitialViewController];
+    [self.navigationController pushViewController:initialVC animated:TRUE];
 }
 
 #pragma mark - UITableViewDataSource
