@@ -21,12 +21,10 @@
 @implementation SSTPhotoViewController
 
 - (NSString *)description {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
     return [NSString stringWithFormat:@"%@ (%i)", NSStringFromClass([self class]), self.index];
 }
 
 - (void)viewDidLoad {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
     [super viewDidLoad];
     
     MAAssert(self.photoImageView, @"IBOutlet must be defined");
@@ -39,7 +37,6 @@
     [super viewWillAppear:animated];
     
     NSString *imageName = [NSString stringWithFormat:@"dog%i.jpg", self.index + 1];
-    DebugLog(@"imageName: %@", imageName);
     UIImage *image = [UIImage imageNamed:imageName];
     self.photoImageView.image = image;
     
