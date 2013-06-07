@@ -13,6 +13,7 @@
 @property (assign, readwrite, nonatomic) NSUInteger index;
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *indexLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomShadowImageView;
 
@@ -31,6 +32,8 @@
     self.photoImageView.image = [UIImage imageNamed:@"dog1.jpg"];
     
     self.bottomShadowImageView.image = [self bottomShadowImage];
+    
+    self.indexLabel.hidden = TRUE;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -40,22 +43,23 @@
     UIImage *image = [UIImage imageNamed:imageName];
     self.photoImageView.image = image;
     
+    self.indexLabel.text = [NSString stringWithFormat:@"%i", self.index];
     
     switch (self.index) {
         case 0:
-            self.captionLabel.text = @"Are you ready...";
+            self.captionLabel.text = @"Are you ready to...";
             break;
         case 1:
-            self.captionLabel.text = @"to relax by the lake...";
+            self.captionLabel.text = @"relax by the lake...";
             break;
         case 2:
             self.captionLabel.text = @"play ball...";
             break;
         case 3:
-            self.captionLabel.text = @"take in some sun..";
+            self.captionLabel.text = @"take in some sun...";
             break;
         case 4:
-            self.captionLabel.text = @"get face time...";
+            self.captionLabel.text = @"give us a smile...";
             break;
         case 5:
             self.captionLabel.text = @"and take a joy ride?";

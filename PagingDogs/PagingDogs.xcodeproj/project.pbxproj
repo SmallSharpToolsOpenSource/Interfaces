@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26922F3E175724A7006F3CD5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26922F3D175724A7006F3CD5 /* Icon.png */; };
+		26922F40175724AD006F3CD5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26922F3F175724AD006F3CD5 /* Icon@2x.png */; };
 		26A1E6B41756981B00EFA60B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1E6B31756981B00EFA60B /* UIKit.framework */; };
 		26A1E6B61756981B00EFA60B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1E6B51756981B00EFA60B /* Foundation.framework */; };
 		26A1E6B81756981B00EFA60B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1E6B71756981B00EFA60B /* CoreGraphics.framework */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26922F3D175724A7006F3CD5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		26922F3F175724AD006F3CD5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		26A1E6B01756981B00EFA60B /* PagingDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagingDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A1E6B31756981B00EFA60B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26A1E6B51756981B00EFA60B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +178,8 @@
 				26A1E6BC1756981B00EFA60B /* InfoPlist.strings */,
 				26A1E6BF1756981B00EFA60B /* main.m */,
 				26A1E6C11756981C00EFA60B /* PagingDogs-Prefix.pch */,
+				26922F3F175724AD006F3CD5 /* Icon@2x.png */,
+				26922F3D175724A7006F3CD5 /* Icon.png */,
 				26A1E6C51756981C00EFA60B /* Default.png */,
 				26A1E6C71756981C00EFA60B /* Default@2x.png */,
 				26A1E6C91756981C00EFA60B /* Default-568h@2x.png */,
@@ -308,6 +314,8 @@
 				26A1E7041756992700EFA60B /* dog5@2x.jpg in Resources */,
 				26A1E7051756992700EFA60B /* dog6.jpg in Resources */,
 				26A1E7061756992700EFA60B /* dog6@2x.jpg in Resources */,
+				26922F3E175724A7006F3CD5 /* Icon.png in Resources */,
+				26922F40175724AD006F3CD5 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
