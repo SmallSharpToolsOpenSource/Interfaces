@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26811A761761A75800AEBFF1 /* SSTFlyingModal1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26811A751761A75800AEBFF1 /* SSTFlyingModal1ViewController.m */; };
+		26811A791761A77A00AEBFF1 /* SSTFlyingModal2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26811A781761A77A00AEBFF1 /* SSTFlyingModal2ViewController.m */; };
+		26811A7C1761A9D300AEBFF1 /* SSTFlyingModalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26811A7B1761A9D300AEBFF1 /* SSTFlyingModalsViewController.m */; };
+		26977E84176179E800C6EB9A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26977E83176179E800C6EB9A /* UIKit.framework */; };
+		26977E86176179E800C6EB9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26977E85176179E800C6EB9A /* Foundation.framework */; };
+		26977E88176179E800C6EB9A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26977E87176179E800C6EB9A /* CoreGraphics.framework */; };
+		26977E8E176179E800C6EB9A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26977E8C176179E800C6EB9A /* InfoPlist.strings */; };
+		26977E90176179E800C6EB9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26977E8F176179E800C6EB9A /* main.m */; };
+		26977E94176179E800C6EB9A /* SSTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26977E93176179E800C6EB9A /* SSTAppDelegate.m */; };
+		26977E96176179E800C6EB9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 26977E95176179E800C6EB9A /* Default.png */; };
+		26977E98176179E800C6EB9A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26977E97176179E800C6EB9A /* Default@2x.png */; };
+		26977E9A176179E800C6EB9A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26977E99176179E800C6EB9A /* Default-568h@2x.png */; };
+		26977E9D176179E800C6EB9A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26977E9B176179E800C6EB9A /* MainStoryboard.storyboard */; };
+		26977EA817617AA900C6EB9A /* SSTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26977EA717617AA900C6EB9A /* SSTBaseViewController.m */; };
+		26D56BAC1762A6E70020B2EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D56BAB1762A6E70020B2EC /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		26811A741761A75800AEBFF1 /* SSTFlyingModal1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTFlyingModal1ViewController.h; sourceTree = "<group>"; };
+		26811A751761A75800AEBFF1 /* SSTFlyingModal1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTFlyingModal1ViewController.m; sourceTree = "<group>"; };
+		26811A771761A77A00AEBFF1 /* SSTFlyingModal2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTFlyingModal2ViewController.h; sourceTree = "<group>"; };
+		26811A781761A77A00AEBFF1 /* SSTFlyingModal2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTFlyingModal2ViewController.m; sourceTree = "<group>"; };
+		26811A7A1761A9D300AEBFF1 /* SSTFlyingModalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTFlyingModalsViewController.h; sourceTree = "<group>"; };
+		26811A7B1761A9D300AEBFF1 /* SSTFlyingModalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTFlyingModalsViewController.m; sourceTree = "<group>"; };
+		26977E80176179E800C6EB9A /* FlyingModals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyingModals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26977E83176179E800C6EB9A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26977E85176179E800C6EB9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26977E87176179E800C6EB9A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26977E8B176179E800C6EB9A /* FlyingModals-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlyingModals-Info.plist"; sourceTree = "<group>"; };
+		26977E8D176179E800C6EB9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26977E8F176179E800C6EB9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26977E91176179E800C6EB9A /* FlyingModals-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlyingModals-Prefix.pch"; sourceTree = "<group>"; };
+		26977E92176179E800C6EB9A /* SSTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTAppDelegate.h; sourceTree = "<group>"; };
+		26977E93176179E800C6EB9A /* SSTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTAppDelegate.m; sourceTree = "<group>"; };
+		26977E95176179E800C6EB9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		26977E97176179E800C6EB9A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		26977E99176179E800C6EB9A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		26977E9C176179E800C6EB9A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		26977EA617617AA900C6EB9A /* SSTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTBaseViewController.h; sourceTree = "<group>"; };
+		26977EA717617AA900C6EB9A /* SSTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTBaseViewController.m; sourceTree = "<group>"; };
+		26D56BAB1762A6E70020B2EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26977E7D176179E800C6EB9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26D56BAC1762A6E70020B2EC /* QuartzCore.framework in Frameworks */,
+				26977E84176179E800C6EB9A /* UIKit.framework in Frameworks */,
+				26977E86176179E800C6EB9A /* Foundation.framework in Frameworks */,
+				26977E88176179E800C6EB9A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26977E77176179E800C6EB9A = {
+			isa = PBXGroup;
+			children = (
+				26977E89176179E800C6EB9A /* FlyingModals */,
+				26977E82176179E800C6EB9A /* Frameworks */,
+				26977E81176179E800C6EB9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26977E81176179E800C6EB9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26977E80176179E800C6EB9A /* FlyingModals.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26977E82176179E800C6EB9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26977E87176179E800C6EB9A /* CoreGraphics.framework */,
+				26977E85176179E800C6EB9A /* Foundation.framework */,
+				26D56BAB1762A6E70020B2EC /* QuartzCore.framework */,
+				26977E83176179E800C6EB9A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26977E89176179E800C6EB9A /* FlyingModals */ = {
+			isa = PBXGroup;
+			children = (
+				26977E8A176179E800C6EB9A /* Supporting Files */,
+				26977E92176179E800C6EB9A /* SSTAppDelegate.h */,
+				26977E93176179E800C6EB9A /* SSTAppDelegate.m */,
+				26977E9B176179E800C6EB9A /* MainStoryboard.storyboard */,
+				26977EA617617AA900C6EB9A /* SSTBaseViewController.h */,
+				26977EA717617AA900C6EB9A /* SSTBaseViewController.m */,
+				26811A7A1761A9D300AEBFF1 /* SSTFlyingModalsViewController.h */,
+				26811A7B1761A9D300AEBFF1 /* SSTFlyingModalsViewController.m */,
+				26811A741761A75800AEBFF1 /* SSTFlyingModal1ViewController.h */,
+				26811A751761A75800AEBFF1 /* SSTFlyingModal1ViewController.m */,
+				26811A771761A77A00AEBFF1 /* SSTFlyingModal2ViewController.h */,
+				26811A781761A77A00AEBFF1 /* SSTFlyingModal2ViewController.m */,
+			);
+			path = FlyingModals;
+			sourceTree = "<group>";
+		};
+		26977E8A176179E800C6EB9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26977E8B176179E800C6EB9A /* FlyingModals-Info.plist */,
+				26977E8C176179E800C6EB9A /* InfoPlist.strings */,
+				26977E8F176179E800C6EB9A /* main.m */,
+				26977E91176179E800C6EB9A /* FlyingModals-Prefix.pch */,
+				26977E95176179E800C6EB9A /* Default.png */,
+				26977E97176179E800C6EB9A /* Default@2x.png */,
+				26977E99176179E800C6EB9A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26977E7F176179E800C6EB9A /* FlyingModals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26977EA3176179E800C6EB9A /* Build configuration list for PBXNativeTarget "FlyingModals" */;
+			buildPhases = (
+				26977E7C176179E800C6EB9A /* Sources */,
+				26977E7D176179E800C6EB9A /* Frameworks */,
+				26977E7E176179E800C6EB9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlyingModals;
+			productName = FlyingModals;
+			productReference = 26977E80176179E800C6EB9A /* FlyingModals.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26977E78176179E800C6EB9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SST;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = SmallSharpTools;
+			};
+			buildConfigurationList = 26977E7B176179E800C6EB9A /* Build configuration list for PBXProject "FlyingModals" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26977E77176179E800C6EB9A;
+			productRefGroup = 26977E81176179E800C6EB9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26977E7F176179E800C6EB9A /* FlyingModals */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26977E7E176179E800C6EB9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26977E8E176179E800C6EB9A /* InfoPlist.strings in Resources */,
+				26977E96176179E800C6EB9A /* Default.png in Resources */,
+				26977E98176179E800C6EB9A /* Default@2x.png in Resources */,
+				26977E9A176179E800C6EB9A /* Default-568h@2x.png in Resources */,
+				26977E9D176179E800C6EB9A /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26977E7C176179E800C6EB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26977E90176179E800C6EB9A /* main.m in Sources */,
+				26977E94176179E800C6EB9A /* SSTAppDelegate.m in Sources */,
+				26977EA817617AA900C6EB9A /* SSTBaseViewController.m in Sources */,
+				26811A761761A75800AEBFF1 /* SSTFlyingModal1ViewController.m in Sources */,
+				26811A791761A77A00AEBFF1 /* SSTFlyingModal2ViewController.m in Sources */,
+				26811A7C1761A9D300AEBFF1 /* SSTFlyingModalsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		26977E8C176179E800C6EB9A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26977E8D176179E800C6EB9A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26977E9B176179E800C6EB9A /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26977E9C176179E800C6EB9A /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26977EA1176179E800C6EB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		26977EA2176179E800C6EB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26977EA4176179E800C6EB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlyingModals/FlyingModals-Prefix.pch";
+				INFOPLIST_FILE = "FlyingModals/FlyingModals-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26977EA5176179E800C6EB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlyingModals/FlyingModals-Prefix.pch";
+				INFOPLIST_FILE = "FlyingModals/FlyingModals-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26977E7B176179E800C6EB9A /* Build configuration list for PBXProject "FlyingModals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26977EA1176179E800C6EB9A /* Debug */,
+				26977EA2176179E800C6EB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26977EA3176179E800C6EB9A /* Build configuration list for PBXNativeTarget "FlyingModals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26977EA4176179E800C6EB9A /* Debug */,
+				26977EA5176179E800C6EB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26977E78176179E800C6EB9A /* Project object */;
+}

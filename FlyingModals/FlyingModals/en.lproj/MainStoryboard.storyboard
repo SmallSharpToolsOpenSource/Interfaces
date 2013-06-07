@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Flying Modals View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="SSTFlyingModalsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbn-OJ-Kn0">
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.75" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="A9F-Vz-k3j"/>
+                                    <constraint firstAttribute="width" constant="120" id="oMn-zK-Do4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Modal 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showModal1ButtonTapped:" destination="2" eventType="touchUpInside" id="VSL-Dz-RhW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIn-eG-FxY">
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.75" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="sbM-CP-4gD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Modal 2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showModal2ButtonTapped:" destination="2" eventType="touchUpInside" id="LaY-JH-pIm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.93359375" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jbn-OJ-Kn0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="7vB-w2-rhH"/>
+                            <constraint firstAttribute="bottom" secondItem="EIn-eG-FxY" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="BlJ-QB-A7O"/>
+                            <constraint firstAttribute="trailing" secondItem="EIn-eG-FxY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M4z-3v-f8v"/>
+                            <constraint firstItem="EIn-eG-FxY" firstAttribute="top" secondItem="jbn-OJ-Kn0" secondAttribute="top" type="default" id="jwA-0M-fje"/>
+                            <constraint firstItem="jbn-OJ-Kn0" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vSN-aj-y3E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="-22"/>
+        </scene>
+        <!--Flying Modal1 View Controller-->
+        <scene sceneID="fHX-vF-hXQ">
+            <objects>
+                <viewController storyboardIdentifier="SSTFlyingModal1VC" id="z55-tI-nnb" customClass="SSTFlyingModal1ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lgy-PP-0ng">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dat-h0-Bfa">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLm-sX-fo7">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eLm-sX-fo7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IPG-5n-fjS"/>
+                                    <constraint firstItem="eLm-sX-fo7" firstAttribute="leading" secondItem="Dat-h0-Bfa" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bI5-ox-ZM2"/>
+                                    <constraint firstAttribute="width" constant="320" type="user" id="eku-f9-bct"/>
+                                    <constraint firstAttribute="height" constant="100" type="user" id="lDj-5Y-rvG"/>
+                                    <constraint firstItem="eLm-sX-fo7" firstAttribute="top" secondItem="Dat-h0-Bfa" secondAttribute="top" constant="39" id="rom-xI-yGS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1W-jW-iU8">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIz-ma-K0h">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="tIz-ma-K0h" firstAttribute="leading" secondItem="T1W-jW-iU8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DaP-Wn-Mup"/>
+                                    <constraint firstItem="tIz-ma-K0h" firstAttribute="top" secondItem="T1W-jW-iU8" secondAttribute="top" constant="89" id="F2O-of-KhA"/>
+                                    <constraint firstAttribute="height" constant="200" type="user" id="Loy-EK-LNc"/>
+                                    <constraint firstAttribute="trailing" secondItem="tIz-ma-K0h" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="o52-sx-Gex"/>
+                                    <constraint firstAttribute="width" constant="320" type="user" id="uw4-EQ-YuM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-fQ-4Se">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flying Modal 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWk-1p-0ae">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXK-Vi-qdS">
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.75" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="82" id="9NZ-kU-yGO"/>
+                                            <constraint firstAttribute="height" constant="44" id="GPw-U2-bh6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismissButtonTapped:" destination="z55-tI-nnb" eventType="touchUpInside" id="bAY-NE-eza"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="fXK-Vi-qdS" firstAttribute="top" secondItem="nWk-1p-0ae" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1hw-pD-i4b"/>
+                                    <constraint firstItem="nWk-1p-0ae" firstAttribute="top" secondItem="vNe-fQ-4Se" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9TF-HS-qE3"/>
+                                    <constraint firstItem="fXK-Vi-qdS" firstAttribute="centerX" secondItem="nWk-1p-0ae" secondAttribute="centerX" type="default" id="rD1-NV-2sM"/>
+                                    <constraint firstItem="fXK-Vi-qdS" firstAttribute="centerX" secondItem="vNe-fQ-4Se" secondAttribute="centerX" type="default" id="sil-C9-l5n"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dat-h0-Bfa" firstAttribute="top" secondItem="lgy-PP-0ng" secondAttribute="top" type="user" id="0md-2A-lTS"/>
+                            <constraint firstItem="T1W-jW-iU8" firstAttribute="trailing" secondItem="lgy-PP-0ng" secondAttribute="trailing" type="user" id="CLd-la-6AK"/>
+                            <constraint firstItem="T1W-jW-iU8" firstAttribute="top" secondItem="lgy-PP-0ng" secondAttribute="top" constant="100" type="user" id="MjB-Ua-fFx"/>
+                            <constraint firstItem="vNe-fQ-4Se" firstAttribute="leading" secondItem="lgy-PP-0ng" secondAttribute="leading" type="default" id="Oni-N2-N0t"/>
+                            <constraint firstItem="vNe-fQ-4Se" firstAttribute="trailing" secondItem="lgy-PP-0ng" secondAttribute="trailing" type="default" id="QsD-Xz-gIj"/>
+                            <constraint firstItem="vNe-fQ-4Se" firstAttribute="top" secondItem="lgy-PP-0ng" secondAttribute="top" constant="423" id="VpX-Qy-Lm3"/>
+                            <constraint firstItem="Dat-h0-Bfa" firstAttribute="leading" secondItem="lgy-PP-0ng" secondAttribute="leading" type="user" id="mzy-iP-zVJ"/>
+                            <constraint firstItem="vNe-fQ-4Se" firstAttribute="bottom" secondItem="lgy-PP-0ng" secondAttribute="bottom" type="default" id="vtQ-T1-1o1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blueBoxLeadingConstraint" destination="mzy-iP-zVJ" id="INt-5Z-jbr"/>
+                        <outlet property="redBoxTrailingConstraint" destination="CLd-la-6AK" id="hEv-jp-C0R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07T-Vd-i1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-410"/>
+        </scene>
+        <!--Flying Modal2 View Controller-->
+        <scene sceneID="1pD-QH-v96">
+            <objects>
+                <viewController storyboardIdentifier="SSTFlyingModal2VC" id="kBv-tW-zyE" customClass="SSTFlyingModal2ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n4H-p4-oiN">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5k-D5-r2D" userLabel="Modal View">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukg-PK-Xhn">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" type="user" id="6hb-s0-pme"/>
+                                            <constraint firstAttribute="width" constant="240" type="user" id="hMR-mF-VMr"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flying Modal 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxC-Vp-hoH">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" type="user" id="Vlf-XC-1Lz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqS-NO-fKP">
+                                        <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" type="user" id="OhD-g2-Vsv"/>
+                                            <constraint firstAttribute="width" constant="82" id="VVu-T2-Knm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismissButtonTapped:" destination="kBv-tW-zyE" eventType="touchUpInside" id="nDh-eD-eeE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.93359375" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ukg-PK-Xhn" firstAttribute="leading" secondItem="N5k-D5-r2D" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="19F-kF-2zo"/>
+                                    <constraint firstAttribute="width" constant="280" type="user" id="APT-ow-E7H"/>
+                                    <constraint firstItem="ukg-PK-Xhn" firstAttribute="top" secondItem="FxC-Vp-hoH" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="EWY-k5-NAV"/>
+                                    <constraint firstItem="yqS-NO-fKP" firstAttribute="centerX" secondItem="ukg-PK-Xhn" secondAttribute="centerX" type="default" id="IeA-QP-996"/>
+                                    <constraint firstItem="FxC-Vp-hoH" firstAttribute="top" secondItem="N5k-D5-r2D" secondAttribute="top" constant="20" symbolic="YES" type="user" id="KsN-Rs-hjc"/>
+                                    <constraint firstItem="yqS-NO-fKP" firstAttribute="top" secondItem="ukg-PK-Xhn" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="SRm-N6-X4c"/>
+                                    <constraint firstItem="FxC-Vp-hoH" firstAttribute="centerX" secondItem="ukg-PK-Xhn" secondAttribute="centerX" type="default" id="eIh-SK-eot"/>
+                                    <constraint firstAttribute="trailing" secondItem="ukg-PK-Xhn" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="kMm-B2-w3O"/>
+                                    <constraint firstAttribute="bottom" secondItem="yqS-NO-fKP" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="tjw-Ja-qWh"/>
+                                    <constraint firstAttribute="height" constant="280" type="user" id="vJt-JZ-3fr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N5k-D5-r2D" firstAttribute="leading" secondItem="n4H-p4-oiN" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="Fpg-6H-obb"/>
+                            <constraint firstAttribute="trailing" secondItem="N5k-D5-r2D" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="aT6-tZ-E9Z"/>
+                            <constraint firstItem="N5k-D5-r2D" firstAttribute="top" secondItem="n4H-p4-oiN" secondAttribute="top" constant="20" symbolic="YES" type="user" id="bcE-1x-R8Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="modalView" destination="N5k-D5-r2D" id="tMh-K0-oVC"/>
+                        <outlet property="textView" destination="ukg-PK-Xhn" id="Rcx-KQ-FeN"/>
+                        <outlet property="topConstraint" destination="bcE-1x-R8Y" id="uqa-Xu-NCs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9K-o9-6mZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="294"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

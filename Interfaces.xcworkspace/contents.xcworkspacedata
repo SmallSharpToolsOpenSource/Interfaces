@@ -19,4 +19,7 @@
    <FileRef
       location = "group:TextAllTheThings/TextAllTheThings.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:FlyingModals/FlyingModals.xcodeproj">
+   </FileRef>
 </Workspace>
