@@ -26,12 +26,10 @@
 #pragma mark -
 
 - (IBAction)showModal1ButtonTapped:(id)sender {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
     [self showFlyingModal1];
 }
 
 - (IBAction)showModal2ButtonTapped:(id)sender {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
     [self showFlyingModal2];
 }
 

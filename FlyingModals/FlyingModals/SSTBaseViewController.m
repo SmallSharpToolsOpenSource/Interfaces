@@ -39,6 +39,21 @@
 #pragma mark - Additions
 #pragma mark -
 
+- (void)fillSubview:(UIView *)subview inSuperView:(UIView *)superview {
+    [superview addConstraints:@[
+     [NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
+                                     toItem:superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
+     [NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual
+                                     toItem:superview attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0],
+     [NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual
+                                     toItem:superview attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0],
+     [NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual
+                                     toItem:superview attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]
+     ]];
+    [subview setNeedsLayout];
+    [subview layoutIfNeeded];
+}
+
 - (void)embedViewController:(UIViewController *)vc intoView:(UIView *)superview {
     MAAssert(vc, @"VC must be define");
     MAAssert(superview, @"Superview must be defined");
@@ -51,18 +66,9 @@
     
     [self addChildViewController:vc];
     [superview addSubview:vc.view];
-    [superview addConstraints:@[
-     [NSLayoutConstraint constraintWithItem:vc.view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
-                                     toItem:superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0],
-     [NSLayoutConstraint constraintWithItem:vc.view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual
-                                     toItem:superview attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0],
-     [NSLayoutConstraint constraintWithItem:vc.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual
-                                     toItem:superview attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0],
-     [NSLayoutConstraint constraintWithItem:vc.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual
-                                     toItem:superview attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]
-     ]];
-    [vc.view setNeedsLayout];
-    [vc.view layoutIfNeeded];
+    [self fillSubview:vc.view inSuperView:superview];
+    
+
     
     [vc didMoveToParentViewController:self];
 }

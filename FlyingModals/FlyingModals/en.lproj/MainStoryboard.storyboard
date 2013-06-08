@@ -107,7 +107,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-fQ-4Se">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flying Modal 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWk-1p-0ae">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -134,8 +134,9 @@
                                 <constraints>
                                     <constraint firstItem="fXK-Vi-qdS" firstAttribute="top" secondItem="nWk-1p-0ae" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1hw-pD-i4b"/>
                                     <constraint firstItem="nWk-1p-0ae" firstAttribute="top" secondItem="vNe-fQ-4Se" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9TF-HS-qE3"/>
+                                    <constraint firstItem="nWk-1p-0ae" firstAttribute="centerX" secondItem="vNe-fQ-4Se" secondAttribute="centerX" type="default" id="JGo-62-FSu"/>
                                     <constraint firstItem="fXK-Vi-qdS" firstAttribute="centerX" secondItem="nWk-1p-0ae" secondAttribute="centerX" type="default" id="rD1-NV-2sM"/>
-                                    <constraint firstItem="fXK-Vi-qdS" firstAttribute="centerX" secondItem="vNe-fQ-4Se" secondAttribute="centerX" type="default" id="sil-C9-l5n"/>
+                                    <constraint firstAttribute="height" constant="125" type="user" id="sWn-3i-OVc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -146,14 +147,15 @@
                             <constraint firstItem="T1W-jW-iU8" firstAttribute="top" secondItem="lgy-PP-0ng" secondAttribute="top" constant="100" type="user" id="MjB-Ua-fFx"/>
                             <constraint firstItem="vNe-fQ-4Se" firstAttribute="leading" secondItem="lgy-PP-0ng" secondAttribute="leading" type="default" id="Oni-N2-N0t"/>
                             <constraint firstItem="vNe-fQ-4Se" firstAttribute="trailing" secondItem="lgy-PP-0ng" secondAttribute="trailing" type="default" id="QsD-Xz-gIj"/>
-                            <constraint firstItem="vNe-fQ-4Se" firstAttribute="top" secondItem="lgy-PP-0ng" secondAttribute="top" constant="423" id="VpX-Qy-Lm3"/>
                             <constraint firstItem="Dat-h0-Bfa" firstAttribute="leading" secondItem="lgy-PP-0ng" secondAttribute="leading" type="user" id="mzy-iP-zVJ"/>
-                            <constraint firstItem="vNe-fQ-4Se" firstAttribute="bottom" secondItem="lgy-PP-0ng" secondAttribute="bottom" type="default" id="vtQ-T1-1o1"/>
+                            <constraint firstItem="vNe-fQ-4Se" firstAttribute="bottom" secondItem="lgy-PP-0ng" secondAttribute="bottom" type="user" id="vtQ-T1-1o1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blueBoxLeadingConstraint" destination="mzy-iP-zVJ" id="INt-5Z-jbr"/>
+                        <outlet property="blueView" destination="Dat-h0-Bfa" id="ZJJ-Lc-YU1"/>
                         <outlet property="redBoxTrailingConstraint" destination="CLd-la-6AK" id="hEv-jp-C0R"/>
+                        <outlet property="redView" destination="T1W-jW-iU8" id="WG9-2r-zxm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07T-Vd-i1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,7 +175,6 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukg-PK-Xhn">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="170" type="user" id="6hb-s0-pme"/>
                                             <constraint firstAttribute="width" constant="240" type="user" id="hMR-mF-VMr"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -184,7 +185,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" type="user" id="Vlf-XC-1Lz"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -209,6 +210,7 @@
                                 <color key="backgroundColor" white="0.93359375" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ukg-PK-Xhn" firstAttribute="leading" secondItem="N5k-D5-r2D" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="19F-kF-2zo"/>
+                                    <constraint firstAttribute="height" constant="280" type="user" id="2jc-r0-LGG"/>
                                     <constraint firstAttribute="width" constant="280" type="user" id="APT-ow-E7H"/>
                                     <constraint firstItem="ukg-PK-Xhn" firstAttribute="top" secondItem="FxC-Vp-hoH" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="EWY-k5-NAV"/>
                                     <constraint firstItem="yqS-NO-fKP" firstAttribute="centerX" secondItem="ukg-PK-Xhn" secondAttribute="centerX" type="default" id="IeA-QP-996"/>
@@ -217,7 +219,7 @@
                                     <constraint firstItem="FxC-Vp-hoH" firstAttribute="centerX" secondItem="ukg-PK-Xhn" secondAttribute="centerX" type="default" id="eIh-SK-eot"/>
                                     <constraint firstAttribute="trailing" secondItem="ukg-PK-Xhn" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="kMm-B2-w3O"/>
                                     <constraint firstAttribute="bottom" secondItem="yqS-NO-fKP" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="tjw-Ja-qWh"/>
-                                    <constraint firstAttribute="height" constant="280" type="user" id="vJt-JZ-3fr"/>
+                                    <constraint firstAttribute="bottom" secondItem="ukg-PK-Xhn" secondAttribute="bottom" constant="61" type="user" id="xD8-wj-dBS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -229,6 +231,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="heightConstraint" destination="2jc-r0-LGG" id="QBp-nJ-mAm"/>
                         <outlet property="modalView" destination="N5k-D5-r2D" id="tMh-K0-oVC"/>
                         <outlet property="textView" destination="ukg-PK-Xhn" id="Rcx-KQ-FeN"/>
                         <outlet property="topConstraint" destination="bcE-1x-R8Y" id="uqa-Xu-NCs"/>

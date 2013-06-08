@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *modalView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
@@ -24,7 +26,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    LOG_FRAME(@"bounds", self.modalView.bounds);
+    // it is easy to delete a constraint in a storyboard, so always assert they are defined
+    MAAssert(self.topConstraint, @"Constraint is required");
+    MAAssert(self.heightConstraint, @"Constraint is required");
+    
+    self.modalView.hidden = TRUE;
     
     self.view.backgroundColor = [self.view.backgroundColor colorWithAlphaComponent:0.75];
     self.textView.text = @"";
@@ -33,21 +39,24 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    LOG_FRAME(@"bounds", self.modalView.bounds);
+    self.view.alpha = 0;
     
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [self hideModal:FALSE withCompletionBlock:nil];
+    [self hideModal:FALSE withCompletionBlock:^{
+        self.modalView.hidden = FALSE;
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    LOG_FRAME(@"bounds", self.modalView.bounds);
-    
+    // due to contraints with autolayout bounds are not set until viewDidAppear (there has to be a better way)
     [self styleModal];
     
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [self showModal:TRUE withCompletionBlock:nil];
+    [UIView animateWithDuration:0.1 animations:^{
+        self.view.alpha = 1;
+    } completion:^(BOOL finished) {
+        [self showModal:TRUE withCompletionBlock:nil];
+    }];
 }
 
 #pragma mark - Hide and Show
@@ -56,9 +65,9 @@
 - (void)hideModal:(BOOL)animated withCompletionBlock:(void (^)())completionBlock {
     CGFloat duration = animated ? 0.25 : 0.0;
     
-    UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear;
+    UIViewAnimationOptions options = UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut;
     [UIView animateWithDuration:duration delay:0.0 options:options animations:^{
-        self.topConstraint.constant = CGRectGetHeight(self.view.frame) / 2 * -1;
+        self.topConstraint.constant = (self.heightConstraint.constant + 20) * -1;
         [self.view endEditing:TRUE];
         [self.view setNeedsLayout];
         [self.view layoutIfNeeded];
@@ -89,6 +98,13 @@
 #pragma mark -
 
 - (void)styleModal {
+    // first set the height of the modal view to adapt for 3.5" and 4" displays
+    
+    // 216 for keyboard + (20 * 2) for additional space on top and bottom
+    self.heightConstraint.constant = CGRectGetHeight(self.view.frame) - 216.0 - 40.0;
+    [self.modalView setNeedsLayout];
+    [self.modalView layoutIfNeeded];
+    
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     UIBezierPath *roundedPath = [UIBezierPath bezierPathWithRoundedRect:self.modalView.bounds
                                                       byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomRight
@@ -105,11 +121,9 @@
 #pragma mark -
 
 - (IBAction)dismissButtonTapped:(id)sender {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    
     [self hideModal:TRUE withCompletionBlock:^{
         [UIView animateWithDuration:0.1 animations:^{
-            self.view.alpha = 0.0;
+            self.view.alpha = 0;
         } completion:^(BOOL finished) {
             [self.delegate flyingModal2ViewControllerDismissed:self];
         }];

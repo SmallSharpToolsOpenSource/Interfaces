@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *blueBoxLeadingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *redBoxTrailingConstraint;
 
+@property (weak, nonatomic) IBOutlet UIView *blueView;
+@property (weak, nonatomic) IBOutlet UIView *redView;
+
 @end
 
 @implementation SSTFlyingModal1ViewController
@@ -21,23 +24,37 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // it is easy to delete a constraint in a storyboard, so always assert they are defined
+    MAAssert(self.blueBoxLeadingConstraint, @"Constraint is required");
+    MAAssert(self.redBoxTrailingConstraint, @"Constraint is required");
+    
     self.view.backgroundColor = [self.view.backgroundColor colorWithAlphaComponent:0.75];
+    
+    // hide the views  in advance of hiding them in viewDidLoad to avoid showing prematurely
+    self.blueView.hidden = TRUE;
+    self.redView.hidden = TRUE;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [self hideModal:FALSE withCompletionBlock:nil];
+    self.view.alpha = 0;
+    
+    [self hideModal:FALSE withCompletionBlock:^{
+        self.blueView.hidden = FALSE;
+        self.redView.hidden = FALSE;
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [self showModal:TRUE withCompletionBlock:nil];
+    [UIView animateWithDuration:0.1 animations:^{
+        self.view.alpha = 1;
+    } completion:^(BOOL finished) {
+        [self showModal:TRUE withCompletionBlock:nil];
+    }];
 }
-
 #pragma mark - Hide and Show
 #pragma mark -
 
@@ -78,11 +95,9 @@
 #pragma mark -
 
 - (IBAction)dismissButtonTapped:(id)sender {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    
     [self hideModal:TRUE withCompletionBlock:^{
         [UIView animateWithDuration:0.1 animations:^{
-            self.view.alpha = 0.0;
+            self.view.alpha = 0;
         } completion:^(BOOL finished) {
             [self.delegate flyingModal1ViewControllerDismissed:self];
         }];
