@@ -53,6 +53,8 @@ that the red box could display controls for the modal while the top view shows a
 large text view or another sort of editor. The red box could also be moved out of view
 and replaced with another set of controls with a pan or swipe gesture. 
 
+<br clear=both />
+
 ### Flying Modal 2
 
 <img src="https://raw.github.com/brennanMKE/Interfaces/master/FlyingModals/FlyingModal2.png" alt="Flying Modal 2" align=right width=200 />
