@@ -100,7 +100,7 @@ is used commonly.
 
 ------
 
-Brennan Stehling
-SmallSharpTools
+Brennan Stehling  
+SmallSharpTools  
 https://alpha.app.net/smallsharptools
 
