@@ -39,6 +39,8 @@ while the current view is still partially visible below.
 
 ### Flying Modal 1
 
+<img src="https://github.com/brennanMKE/Interfaces/blob/master/FlyingModals/FlyingModal1.png" alt="Flying Modal 1" align=right width=200 />
+
 The first flying modal covers the current view will a translucent mask before 2
 boxes fly into the visible space from the left and right sides. The modal is 
 dismissed with a button which is positioned at the bottom. The view which it 
@@ -52,6 +54,8 @@ large text view or another sort of editor. The red box could also be moved out o
 and replaced with another set of controls with a pan or swipe gesture. 
 
 ### Flying Modal 2
+
+<img src="https://github.com/brennanMKE/Interfaces/blob/master/FlyingModals/FlyingModal2.png" alt="Flying Modal 2" align=right width=200 />
 
 The seconds modal also masks the current screen with a text view sliding down from
 the top. What makes this modal interesting is that automatically adapts for the 3.5"
