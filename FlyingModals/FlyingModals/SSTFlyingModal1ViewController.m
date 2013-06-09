@@ -55,6 +55,7 @@
         [self showModal:TRUE withCompletionBlock:nil];
     }];
 }
+
 #pragma mark - Hide and Show
 #pragma mark -
 
