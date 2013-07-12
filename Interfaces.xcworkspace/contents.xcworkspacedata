@@ -22,4 +22,7 @@
    <FileRef
       location = "group:FlyingModals/FlyingModals.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Stacks/Stacks.xcodeproj">
+   </FileRef>
 </Workspace>
