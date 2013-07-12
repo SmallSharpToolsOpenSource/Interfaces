@@ -10,6 +10,8 @@
 
 #define kMaxLabelWidth      280
 
+#define kUseConstraints     1
+
 @implementation SSTStackedItemViewOwner
 @end
 
@@ -58,25 +60,77 @@
 }
 
 + (CGFloat)stackItems:(NSArray *)stackedItems inView:(UIView *)view {
-//    DebugLog(@"%@", NSStringFromSelector(_cmd));
     
     CGFloat yPos = 0;
-    for (SSTStackedItem *stackedItem in stackedItems) {
-//        DebugLog(@"stackedItem: %@", stackedItem.text);
-        SSTStackedItemView *stackedItemView = [SSTStackedItemView loadViewFromNib];
-        
-        stackedItemView.translatesAutoresizingMaskIntoConstraints = YES;
-        
-        MAAssert(stackedItemView, @"View must be defined");
-        [stackedItemView configureForStackedItem:stackedItem];
-        CGFloat height = [SSTStackedItemView heightForViewWithStackedItem:stackedItem];
-        CGRect frame = CGRectMake(0, yPos, 320, height);
-        stackedItemView.frame = frame;
-        yPos += height;
-        [view addSubview:stackedItemView];
+    if (kUseConstraints) {
+        SSTStackedItemView *previousView = nil;
+        for (SSTStackedItem *stackedItem in stackedItems) {
+            SSTStackedItemView *stackedItemView = [SSTStackedItemView loadViewFromNib];
+            [stackedItemView configureForStackedItem:stackedItem];
+            CGFloat height = [SSTStackedItemView heightForViewWithStackedItem:stackedItem];
+            yPos += height;
+            stackedItemView.translatesAutoresizingMaskIntoConstraints = NO;
+            [view addSubview:stackedItemView];
+            
+            if (!previousView) {
+                // constrain view to top
+                [SSTStackedItemView constrainViewToTopOfSuperview:stackedItemView withHeight:height];
+            }
+            else {
+                // constrant current view to the previous view
+                [SSTStackedItemView constraintView:stackedItemView toPreviousView:previousView withHeight:height];
+            }
+
+            previousView = stackedItemView;
+        }
+    }
+    else {
+        for (SSTStackedItem *stackedItem in stackedItems) {
+            SSTStackedItemView *stackedItemView = [SSTStackedItemView loadViewFromNib];
+            [stackedItemView configureForStackedItem:stackedItem];
+            CGFloat height = [SSTStackedItemView heightForViewWithStackedItem:stackedItem];
+            CGRect frame = CGRectMake(0, yPos, 320, height);
+            stackedItemView.frame = frame;
+            yPos += height;
+            [view addSubview:stackedItemView];
+        }
     }
     
     return yPos;
+}
+
++ (void)constrainViewToTopOfSuperview:(UIView *)view withHeight:(CGFloat)height {
+    // attach top to top, leading, trailing and then height
+
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    
+    NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:view.superview attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
+    
+    NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:view.superview attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+    
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:height];
+    
+    [view.superview addConstraint:topConstraint];
+    [view.superview addConstraint:leadingConstraint];
+    [view.superview addConstraint:trailingConstraint];
+    [view addConstraint:heightConstraint];
+}
+
++ (void)constraintView:(UIView *)view toPreviousView:(UIView *)previousView withHeight:(CGFloat)height {
+    // attach top to bottom, leading, trailing and then height
+    
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:previousView attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    
+    NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:view.superview attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
+    
+    NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:view.superview attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+    
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:height];
+    
+    [view.superview addConstraint:topConstraint];
+    [view.superview addConstraint:leadingConstraint];
+    [view.superview addConstraint:trailingConstraint];
+    [view addConstraint:heightConstraint];
 }
 
 - (void)logFonts {
@@ -87,7 +141,6 @@
         }
     }
 }
-
 
 #pragma mark - Private
 #pragma mark -
