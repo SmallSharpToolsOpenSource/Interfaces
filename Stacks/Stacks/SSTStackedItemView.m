@@ -60,7 +60,6 @@
 }
 
 + (CGFloat)stackItems:(NSArray *)stackedItems inView:(UIView *)view {
-    
     CGFloat yPos = 0;
     if (kUseConstraints) {
         SSTStackedItemView *previousView = nil;
