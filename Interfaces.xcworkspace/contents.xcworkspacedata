@@ -5,6 +5,9 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:SideBar/SideBar.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ListView/ListView.xcodeproj">
    </FileRef>
    <FileRef
@@ -14,18 +17,15 @@
       location = "group:StatusView/StatusView.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SideBar/SideBar.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:MultipleStoryboards/MultipleStoryboards.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TextAllTheThings/TextAllTheThings.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:FlyingModals/FlyingModals.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Stacks/Stacks.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TextAllTheThings/TextAllTheThings.xcodeproj">
    </FileRef>
 </Workspace>
