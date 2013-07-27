@@ -5,6 +5,9 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:ListView/ListView.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:PagingDogs/PagingDogs.xcodeproj">
    </FileRef>
    <FileRef
