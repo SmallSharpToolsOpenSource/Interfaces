@@ -29,16 +29,18 @@
     self.firstCollectionView.allowsMultipleSelection = YES;
     self.secondCollectionView.allowsMultipleSelection = YES;
     
+    self.firstCollectionView.contentInset = UIEdgeInsetsMake(0, 1, 0, 1);
+    
     // don't let the empty cells show
-    self.secondCollectionView.contentInset = UIEdgeInsetsMake(0, -200, 0, -200);
+    self.secondCollectionView.contentInset = UIEdgeInsetsMake(0, -230, 0, -230);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.secondCollectionView.contentOffset.x == 0) {
-        self.secondCollectionView.contentOffset = CGPointMake(150, 0);
-    }
+//    if (self.secondCollectionView.contentOffset.x == 0) {
+//        self.secondCollectionView.contentOffset = CGPointMake(150, 0);
+//    }
 
 }
 

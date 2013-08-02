@@ -34,7 +34,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="acN-sl-gWI"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="kXa-cb-SDh">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="kXa-cb-SDh">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -84,10 +84,9 @@
                                     <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tNe-Ph-YBX">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="420" type="user" id="HzB-Ti-zah"/>
                                             <constraint firstAttribute="height" constant="250" type="user" id="a7G-nc-P9g"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="Dyl-MP-D5S">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="12" minimumInteritemSpacing="0.0" id="Dyl-MP-D5S">
                                             <size key="itemSize" width="250" height="250"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -122,7 +121,7 @@
                                                 <size key="customSize" width="250" height="250"/>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmptyCell" id="xZt-XO-b8n">
-                                                <rect key="frame" x="258" y="0.0" width="250" height="250"/>
+                                                <rect key="frame" x="262" y="0.0" width="250" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
@@ -143,8 +142,8 @@
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="tNe-Ph-YBX" secondAttribute="centerY" type="user" id="0bH-1Q-VwX"/>
                                     <constraint firstAttribute="height" constant="250" type="user" id="Llr-J4-U1g"/>
-                                    <constraint firstAttribute="width" constant="420" type="user" id="mhn-ka-Sem"/>
-                                    <constraint firstAttribute="centerX" secondItem="tNe-Ph-YBX" secondAttribute="centerX" type="user" id="xAn-cw-BMI"/>
+                                    <constraint firstItem="tNe-Ph-YBX" firstAttribute="leading" secondItem="z23-nW-Ve9" secondAttribute="leading" type="default" id="qJY-ft-vcg"/>
+                                    <constraint firstItem="tNe-Ph-YBX" firstAttribute="trailing" secondItem="z23-nW-Ve9" secondAttribute="trailing" type="default" id="uRj-3R-C9y"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-hq-kze" userLabel="Border View">
@@ -158,8 +157,9 @@
                         <constraints>
                             <constraint firstItem="pLe-hq-kze" firstAttribute="top" secondItem="3" secondAttribute="top" constant="333" id="7A4-6Y-dmp"/>
                             <constraint firstItem="Pab-Tg-WM4" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="Eze-Ii-mbF"/>
-                            <constraint firstAttribute="centerX" secondItem="z23-nW-Ve9" secondAttribute="centerX" type="user" id="FVr-zj-2f4"/>
+                            <constraint firstItem="z23-nW-Ve9" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="S7n-6r-H5y"/>
                             <constraint firstItem="Pab-Tg-WM4" firstAttribute="trailing" secondItem="MHD-aA-QDM" secondAttribute="trailing" type="default" id="U2J-qX-DPa"/>
+                            <constraint firstItem="z23-nW-Ve9" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="UV6-Tf-db9"/>
                             <constraint firstItem="z23-nW-Ve9" firstAttribute="top" secondItem="3" secondAttribute="top" constant="84" type="user" id="Wt8-B8-J69"/>
                             <constraint firstItem="pLe-hq-kze" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="g4l-qp-cjp"/>
                             <constraint firstItem="Pab-Tg-WM4" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="gf2-lD-4MO"/>
