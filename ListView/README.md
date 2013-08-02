@@ -12,7 +12,7 @@ A common UI which is sometimes hard to create is the App Store search results wh
 <br clear="both" />
 
 Brennan Stehling  
-[SmallSharpTools](http://www.smallsharptools.com/)
-[@smallsharptools](https://alpha.app.net/smallsharptools) (App.net)
-[@smallsharptools](https://twitter.com/smallsharptools) (Twitter)
+[SmallSharpTools](http://www.smallsharptools.com/)  
+[@smallsharptools](https://alpha.app.net/smallsharptools) (App.net)  
+[@smallsharptools](https://twitter.com/smallsharptools) (Twitter)  
 
