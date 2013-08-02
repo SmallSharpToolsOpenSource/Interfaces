@@ -23,10 +23,6 @@
 		2667B9C617A0829C00090C05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2667B9C417A0829C00090C05 /* InfoPlist.strings */; };
 		2667B9C917A0829C00090C05 /* ListViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2667B9C817A0829C00090C05 /* ListViewTests.m */; };
 		2667B9D417A082E500090C05 /* SSTListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2667B9D317A082E500090C05 /* SSTListViewController.m */; };
-		2667B9DC17A0839300090C05 /* SSTListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2667B9DB17A0839300090C05 /* SSTListView.m */; };
-		2667B9DF17A083BB00090C05 /* SSTListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2667B9DE17A083BB00090C05 /* SSTListViewCell.m */; };
-		2667B9E217A0922E00090C05 /* SSTSimpleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2667B9E117A0922E00090C05 /* SSTSimpleListCell.m */; };
-		2667B9E417A0924100090C05 /* SSTSimpleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2667B9E317A0924100090C05 /* SSTSimpleListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,13 +58,6 @@
 		2667B9C817A0829C00090C05 /* ListViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewTests.m; sourceTree = "<group>"; };
 		2667B9D217A082E500090C05 /* SSTListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTListViewController.h; sourceTree = "<group>"; };
 		2667B9D317A082E500090C05 /* SSTListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTListViewController.m; sourceTree = "<group>"; };
-		2667B9DA17A0839300090C05 /* SSTListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSTListView.h; path = Common/SSTListView.h; sourceTree = "<group>"; };
-		2667B9DB17A0839300090C05 /* SSTListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSTListView.m; path = Common/SSTListView.m; sourceTree = "<group>"; };
-		2667B9DD17A083BB00090C05 /* SSTListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSTListViewCell.h; path = Common/SSTListViewCell.h; sourceTree = "<group>"; };
-		2667B9DE17A083BB00090C05 /* SSTListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSTListViewCell.m; path = Common/SSTListViewCell.m; sourceTree = "<group>"; };
-		2667B9E017A0922E00090C05 /* SSTSimpleListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTSimpleListCell.h; sourceTree = "<group>"; };
-		2667B9E117A0922E00090C05 /* SSTSimpleListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTSimpleListCell.m; sourceTree = "<group>"; };
-		2667B9E317A0924100090C05 /* SSTSimpleListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSTSimpleListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,15 +118,11 @@
 			isa = PBXGroup;
 			children = (
 				2667B99E17A0829B00090C05 /* Supporting Files */,
-				2667B9D917A0837900090C05 /* Common */,
 				2667B9A617A0829B00090C05 /* SSTAppDelegate.h */,
 				2667B9A717A0829B00090C05 /* SSTAppDelegate.m */,
 				2667B9AF17A0829B00090C05 /* MainStoryboard.storyboard */,
 				2667B9D217A082E500090C05 /* SSTListViewController.h */,
 				2667B9D317A082E500090C05 /* SSTListViewController.m */,
-				2667B9E017A0922E00090C05 /* SSTSimpleListCell.h */,
-				2667B9E117A0922E00090C05 /* SSTSimpleListCell.m */,
-				2667B9E317A0924100090C05 /* SSTSimpleListCell.xib */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -173,17 +158,6 @@
 				2667B9C417A0829C00090C05 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2667B9D917A0837900090C05 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				2667B9DA17A0839300090C05 /* SSTListView.h */,
-				2667B9DB17A0839300090C05 /* SSTListView.m */,
-				2667B9DD17A083BB00090C05 /* SSTListViewCell.h */,
-				2667B9DE17A083BB00090C05 /* SSTListViewCell.m */,
-			);
-			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +237,6 @@
 				2667B9AC17A0829B00090C05 /* Default@2x.png in Resources */,
 				2667B9AE17A0829B00090C05 /* Default-568h@2x.png in Resources */,
 				2667B9B117A0829B00090C05 /* MainStoryboard.storyboard in Resources */,
-				2667B9E417A0924100090C05 /* SSTSimpleListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,9 +274,6 @@
 				2667B9A417A0829B00090C05 /* main.m in Sources */,
 				2667B9A817A0829B00090C05 /* SSTAppDelegate.m in Sources */,
 				2667B9D417A082E500090C05 /* SSTListViewController.m in Sources */,
-				2667B9DC17A0839300090C05 /* SSTListView.m in Sources */,
-				2667B9DF17A083BB00090C05 /* SSTListViewCell.m in Sources */,
-				2667B9E217A0922E00090C05 /* SSTSimpleListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +454,7 @@
 				2667B9CE17A0829C00090C05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2667B9CF17A0829C00090C05 /* Build configuration list for PBXNativeTarget "ListViewTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +463,7 @@
 				2667B9D117A0829C00090C05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
