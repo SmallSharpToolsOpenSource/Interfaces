@@ -1,7 +1,7 @@
 ListView
 ==========
 
-<div style="float: right"><img src="https://raw.github.com/brennanMKE/Interfaces/master/ListView/ListView.png" style="width: 200px;" /></div>
+<img src="https://raw.github.com/brennanMKE/Interfaces/master/ListView/ListView.png" width="200" align="right" />
 
 Sample project which uses a UICollectionView with a horizontal flow layout to implement what is often done by rotating a UITableView to achieve horizontal scrolling. Using UICollectionView is surprisingly easy.
 
