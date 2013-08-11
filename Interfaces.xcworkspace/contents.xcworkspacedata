@@ -28,4 +28,7 @@
    <FileRef
       location = "group:TextAllTheThings/TextAllTheThings.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:DrawingLines/DrawingLines.xcodeproj">
+   </FileRef>
 </Workspace>
