@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SSTDrawingViewDelegate;
+
 @interface SSTDrawingView : UIView
+
+@property (weak, nonatomic) IBOutlet id<SSTDrawingViewDelegate> delegate;
+
+- (void)drawLine;
+
+@end
+
+@protocol SSTDrawingViewDelegate <NSObject>
+
+@optional
+
+- (void)drawingViewDidFinishDrawing:(SSTDrawingView *)drawingView;
 
 @end

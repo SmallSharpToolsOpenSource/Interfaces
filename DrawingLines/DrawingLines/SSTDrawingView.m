@@ -13,35 +13,19 @@ float randomFloat(float min, float max){
 }
 
 #define kIntervalDuration   1.0f / 30.0f
+#define kDidFinishSelector @selector(drawingViewDidFinishDrawing:)
 
 @implementation SSTDrawingView {
-    BOOL drawingStarted;
+    BOOL isDrawing;
     CGFloat start;
     CGFloat finish;
-    CGFloat drawingProgress;
+    CGFloat currentPosition;
 }
 
-- (id)initWithFrame:(CGRect)frame {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    // this is where the animation will be started
-    
-    [self startDrawing];
-}
-
-- (void)startDrawing {
-    if (!drawingStarted) {
-        drawingStarted = TRUE;
-        drawingProgress = 0.0f;
+- (void)drawLine {
+    if (!isDrawing) {
+        isDrawing = TRUE;
+        currentPosition = 0.0f;
         start = randomFloat(0.5, 0.7);
         finish = randomFloat(0.3, 0.5);
         
@@ -50,13 +34,15 @@ float randomFloat(float min, float max){
 }
 
 - (void)updateDrawing:(NSTimer*)timer {
-    drawingProgress += kIntervalDuration * 4;
+    currentPosition += kIntervalDuration * 4;
     [self setNeedsDisplay];
     
-    if (drawingProgress >= 1.0f) {
+    if (currentPosition >= 1.0f) {
         [timer invalidate];
-        drawingStarted = FALSE;
-        [self performSelector:@selector(startDrawing) withObject:nil afterDelay:0.75];
+        isDrawing = FALSE;
+        if ([self.delegate respondsToSelector:kDidFinishSelector]) {
+            [self.delegate performSelector:kDidFinishSelector withObject:self];
+        }
     }
 }
 
@@ -71,7 +57,7 @@ float randomFloat(float min, float max){
     
     CGFloat difference = startHeight - finishHeight;
     
-    CGFloat currentFinishHeight = startHeight - (difference * drawingProgress);
+    CGFloat currentFinishHeight = startHeight - (difference * currentPosition);
   
     //// Color Declarations
     UIColor* strokeColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
@@ -79,7 +65,7 @@ float randomFloat(float min, float max){
     //// Bezier Drawing
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint: CGPointMake(0, startHeight)];
-    [bezierPath addLineToPoint: CGPointMake(width * drawingProgress, currentFinishHeight)];
+    [bezierPath addLineToPoint: CGPointMake(width * currentPosition, currentFinishHeight)];
     [strokeColor setStroke];
     bezierPath.lineWidth = 6;
     [bezierPath stroke];

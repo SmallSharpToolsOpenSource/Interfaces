@@ -18,6 +18,7 @@
 		2604D02817B6D4E90079F51E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2604D02717B6D4E90079F51E /* Default-568h@2x.png */; };
 		2604D02B17B6D4E90079F51E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2604D02917B6D4E90079F51E /* MainStoryboard.storyboard */; };
 		2604D03617B6D6330079F51E /* SSTDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2604D03517B6D6330079F51E /* SSTDrawingView.m */; };
+		2604D07117B851060079F51E /* SSTDrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2604D07017B851060079F51E /* SSTDrawingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		2604D02A17B6D4E90079F51E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2604D03417B6D6330079F51E /* SSTDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTDrawingView.h; sourceTree = "<group>"; };
 		2604D03517B6D6330079F51E /* SSTDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTDrawingView.m; sourceTree = "<group>"; };
+		2604D06F17B851060079F51E /* SSTDrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTDrawingViewController.h; sourceTree = "<group>"; };
+		2604D07017B851060079F51E /* SSTDrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTDrawingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				2604D02017B6D4E90079F51E /* SSTAppDelegate.h */,
 				2604D02117B6D4E90079F51E /* SSTAppDelegate.m */,
 				2604D02917B6D4E90079F51E /* MainStoryboard.storyboard */,
+				2604D06F17B851060079F51E /* SSTDrawingViewController.h */,
+				2604D07017B851060079F51E /* SSTDrawingViewController.m */,
 				2604D03417B6D6330079F51E /* SSTDrawingView.h */,
 				2604D03517B6D6330079F51E /* SSTDrawingView.m */,
 			);
@@ -177,6 +182,7 @@
 				2604D01E17B6D4E90079F51E /* main.m in Sources */,
 				2604D02217B6D4E90079F51E /* SSTAppDelegate.m in Sources */,
 				2604D03617B6D6330079F51E /* SSTDrawingView.m in Sources */,
+				2604D07117B851060079F51E /* SSTDrawingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
