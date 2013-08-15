@@ -31,4 +31,7 @@
    <FileRef
       location = "group:DrawingLines/DrawingLines.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:GrowingImageView/GrowingImageView.xcodeproj">
+   </FileRef>
 </Workspace>
