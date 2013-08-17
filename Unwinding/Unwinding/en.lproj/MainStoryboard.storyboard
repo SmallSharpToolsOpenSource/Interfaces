@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0j-Sr-znM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="1465"/>
+            <point key="canvasLocation" x="467" y="1451"/>
         </scene>
         <!--Sixth View Controller-->
         <scene sceneID="Cjn-x2-WXf">
@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5M-1p-Wyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="1465"/>
+            <point key="canvasLocation" x="942" y="1451"/>
         </scene>
         <!--Unwinding View Controller - Unwinding-->
         <scene sceneID="5">
@@ -152,12 +152,12 @@
                     <connections>
                         <segue destination="xdK-WA-Thy" kind="push" identifier="HomeToFirst" id="EDE-aS-NhI"/>
                         <segue destination="uNB-tX-adV" kind="modal" identifier="HomeToFourth" id="Z3S-mS-r9C"/>
-                        <segue destination="ou0-vj-yAe" kind="push" identifier="HomeToFifth" id="q8k-4t-HmQ"/>
+                        <segue destination="ou0-vj-yAe" kind="push" identifier="HomeToFifth" id="h4N-CP-vcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="77"/>
+            <point key="canvasLocation" x="0.0" y="71"/>
         </scene>
         <!--First View Controller - First-->
         <scene sceneID="2ws-ct-4el">
@@ -229,61 +229,6 @@
             <point key="canvasLocation" x="955" y="77"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SSTBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTBaseViewController.h"/>
-        </class>
-        <class className="SSTFifthViewController" superclassName="SSTBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTFifthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="modalButtonTapped:"/>
-            </relationships>
-        </class>
-        <class className="SSTFirstViewController" superclassName="SSTBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTFirstViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="forwardButtonTapped:"/>
-            </relationships>
-        </class>
-        <class className="SSTFourthViewController" superclassName="SSTBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTFourthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismissButtonTapped:"/>
-            </relationships>
-        </class>
-        <class className="SSTSecondViewController" superclassName="SSTBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTSecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="forwardButtonTapped:"/>
-            </relationships>
-        </class>
-        <class className="SSTSixthViewController" superclassName="SSTBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTSixthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismissButtonTapped:"/>
-            </relationships>
-        </class>
-        <class className="SSTThirdViewController" superclassName="SSTBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTThirdViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="homeButtonTapped:"/>
-            </relationships>
-        </class>
-        <class className="SSTUnwindingViewController" superclassName="SSTBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTUnwindingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="forwardButtonTapped:"/>
-                <relationship kind="action" name="modalButtonTapped:"/>
-                <relationship kind="action" name="popToHome:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

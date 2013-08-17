@@ -17,11 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"";
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    DebugLog(@"segue: %@", segue.identifier);
+    self.title = @"Unwinding";
 }
 
 - (IBAction)forwardButtonTapped:(id)sender {

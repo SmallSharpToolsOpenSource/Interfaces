@@ -20,15 +20,8 @@
     self.title = @"Fourth";
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    DebugLog(@"isModal: %@", [self isModal:self] ? @"YES" : @"NO");
-}
-
 - (IBAction)dismissButtonTapped:(id)sender {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [self performSegueWithIdentifier:@"popToHome" action:@selector(popToHome:)];
+    [self performUnwindSegueWithIdentifier:@"popToHome" action:@selector(popToHome:)];
 }
 
 @end

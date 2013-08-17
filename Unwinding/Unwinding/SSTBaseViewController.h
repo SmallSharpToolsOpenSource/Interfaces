@@ -10,8 +10,6 @@
 
 @interface SSTBaseViewController : UIViewController
 
-- (void)performSegueWithIdentifier:(NSString *)identifier action:(SEL)action;
-
-- (BOOL)isModal:(UIViewController *)vc;
+- (void)performUnwindSegueWithIdentifier:(NSString *)identifier action:(SEL)action;
 
 @end

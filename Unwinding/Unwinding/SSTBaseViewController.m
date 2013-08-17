@@ -14,21 +14,13 @@
 
 @implementation SSTBaseViewController
 
-- (BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender {
-    DebugLog(@"%@ (%@)", NSStringFromSelector(_cmd), self.title);
-    return [super canPerformUnwindSegueAction:action fromViewController:fromViewController withSender:sender];
-}
-
 - (UIViewController *)parentOrPresentingViewController {
     return self.parentViewController ? self.parentViewController : self.presentingViewController;
 }
 
-- (void)performSegueWithIdentifier:(NSString *)identifier action:(SEL)action {
-    
+- (void)performUnwindSegueWithIdentifier:(NSString *)identifier action:(SEL)action {
     UIViewController *destinationVC = nil;
-    
     UIViewController *parentVC = [self parentOrPresentingViewController];
-    
     while (parentVC) {
         UIViewController *vc = [parentVC viewControllerForUnwindSegueAction:action fromViewController:self withSender:self];
         if (vc) {
@@ -41,31 +33,25 @@
     }
     
     if (destinationVC) {
-        DebugLog(@"destinationVC: %@", NSStringFromClass([destinationVC class]));
         UIStoryboardSegue *segue = [UIStoryboardSegue segueWithIdentifier:identifier source:self destination:destinationVC performHandler:^{
-            DebugLog(@"Performing!");
-//            if ([self isModal:self]) {
-                DebugLog(@"dismissing");
+            // pop if there is a navigation controller and it has view controllers besides the root
+            if (destinationVC.navigationController && destinationVC.navigationController.viewControllers.count > 1) {
+                // dismiss modal before popping if necessary
+                if (destinationVC.presentedViewController) {
+                    [destinationVC dismissViewControllerAnimated:FALSE completion:nil];
+                }
+                [destinationVC.navigationController popToViewController:destinationVC animated:TRUE];
+            }
+            else if (destinationVC.presentedViewController) {
                 [destinationVC dismissViewControllerAnimated:TRUE completion:nil];
-//            }
-//            else {
-//                DebugLog(@"popping");
-//                [destinationVC.navigationController popToViewController:destinationVC animated:TRUE];
-//            }
+            }
         }];
         [segue perform];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [destinationVC performSelector:action withObject:segue];
+#pragma clang diagnostic pop
     }
-
-}
-
-- (BOOL)isModal:(UIViewController *)vc {
-    BOOL isModal = ((vc.presentingViewController && vc.presentingViewController.presentedViewController == vc) ||
-                    //or if I have a navigation controller, check if its parent modal view controller is self navigation controller
-                    (vc.navigationController && vc.navigationController.presentingViewController && vc.navigationController.presentingViewController.presentedViewController == vc.navigationController) ||
-                    //or if the parent of my UITabBarController is also a UITabBarController class, then there is no way to do that, except by using a modal presentation
-                    [[[vc tabBarController] presentingViewController] isKindOfClass:[UITabBarController class]]);
-    
-    return isModal;
 }
 
 @end

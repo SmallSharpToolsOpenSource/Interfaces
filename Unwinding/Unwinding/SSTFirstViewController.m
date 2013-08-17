@@ -20,12 +20,6 @@
     self.title = @"First";
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    DebugLog(@"isModal: %@", [self isModal:self] ? @"YES" : @"NO");
-}
-
 - (IBAction)forwardButtonTapped:(id)sender {
     [self performSegueWithIdentifier:@"FirstToSecond" sender:self];
 }

@@ -21,8 +21,7 @@
 }
 
 - (IBAction)dismissButtonTapped:(id)sender {
-    DebugLog(@"%@", NSStringFromSelector(_cmd));
-    [self performSegueWithIdentifier:@"popToHome" action:@selector(popToHome:)];
+    [self performUnwindSegueWithIdentifier:@"popToHome" action:@selector(popToHome:)];
 }
 
 @end
