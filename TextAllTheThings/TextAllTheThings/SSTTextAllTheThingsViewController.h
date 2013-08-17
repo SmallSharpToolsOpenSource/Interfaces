@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SSTViewController : UIViewController
+@interface SSTTextAllTheThingsViewController : UIViewController
 
 @end

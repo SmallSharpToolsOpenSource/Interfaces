@@ -45,7 +45,7 @@
 }
 
 - (CGRect)originalFrame {
-    CGPoint point = [self.fullView convertPoint:self.fullView.frame.origin fromView:self];
+    CGPoint point = [self.fullView convertPoint:self.bounds.origin fromView:self];
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);
     

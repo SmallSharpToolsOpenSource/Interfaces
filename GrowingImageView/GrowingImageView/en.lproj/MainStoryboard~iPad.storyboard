@@ -70,16 +70,6 @@
     <resources>
         <image name="GoldenEgg.png" width="300" height="400"/>
     </resources>
-    <classes>
-        <class className="SSTGrowingImageView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTGrowingImageView.h"/>
-            <relationships>
-                <relationship kind="action" name="fullImageViewTapped:"/>
-                <relationship kind="action" name="originalImageViewTapped:"/>
-                <relationship kind="outlet" name="fullView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

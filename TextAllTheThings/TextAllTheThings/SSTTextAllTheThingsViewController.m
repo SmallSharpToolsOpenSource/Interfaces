@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 SmallSharptools LLC. All rights reserved.
 //
 
-#import "SSTViewController.h"
+#import "SSTTextAllTheThingsViewController.h"
 
-@interface SSTViewController ()
+@interface SSTTextAllTheThingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
 @end
 
-@implementation SSTViewController
+@implementation SSTTextAllTheThingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

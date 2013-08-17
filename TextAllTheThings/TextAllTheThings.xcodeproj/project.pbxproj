@@ -17,7 +17,7 @@
 		26EE0A5316EA4AD2001E073F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EE0A5216EA4AD2001E073F /* Default@2x.png */; };
 		26EE0A5516EA4AD2001E073F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EE0A5416EA4AD2001E073F /* Default-568h@2x.png */; };
 		26EE0A5816EA4AD2001E073F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26EE0A5616EA4AD2001E073F /* MainStoryboard.storyboard */; };
-		26EE0A5B16EA4AD2001E073F /* SSTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EE0A5A16EA4AD2001E073F /* SSTViewController.m */; };
+		26EE0A5B16EA4AD2001E073F /* SSTTextAllTheThingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EE0A5A16EA4AD2001E073F /* SSTTextAllTheThingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +35,8 @@
 		26EE0A5216EA4AD2001E073F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		26EE0A5416EA4AD2001E073F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		26EE0A5716EA4AD2001E073F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		26EE0A5916EA4AD2001E073F /* SSTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTViewController.h; sourceTree = "<group>"; };
-		26EE0A5A16EA4AD2001E073F /* SSTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTViewController.m; sourceTree = "<group>"; };
+		26EE0A5916EA4AD2001E073F /* SSTTextAllTheThingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTTextAllTheThingsViewController.h; sourceTree = "<group>"; };
+		26EE0A5A16EA4AD2001E073F /* SSTTextAllTheThingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTTextAllTheThingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 				26EE0A4D16EA4AD2001E073F /* SSTAppDelegate.h */,
 				26EE0A4E16EA4AD2001E073F /* SSTAppDelegate.m */,
 				26EE0A5616EA4AD2001E073F /* MainStoryboard.storyboard */,
-				26EE0A5916EA4AD2001E073F /* SSTViewController.h */,
-				26EE0A5A16EA4AD2001E073F /* SSTViewController.m */,
+				26EE0A5916EA4AD2001E073F /* SSTTextAllTheThingsViewController.h */,
+				26EE0A5A16EA4AD2001E073F /* SSTTextAllTheThingsViewController.m */,
 				26EE0A4516EA4AD2001E073F /* Supporting Files */,
 			);
 			path = TextAllTheThings;
@@ -176,7 +176,7 @@
 			files = (
 				26EE0A4B16EA4AD2001E073F /* main.m in Sources */,
 				26EE0A4F16EA4AD2001E073F /* SSTAppDelegate.m in Sources */,
-				26EE0A5B16EA4AD2001E073F /* SSTViewController.m in Sources */,
+				26EE0A5B16EA4AD2001E073F /* SSTTextAllTheThingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +299,7 @@
 				26EE0A6016EA4AD2001E073F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

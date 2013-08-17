@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 SmallSharpTools LLC. All rights reserved.
 //
 
-#import "SSTViewController.h"
+#import "SSTStatusViewController.H"
 
 #import "SSTStatusView.h"
 
-@interface SSTViewController ()
+@interface SSTStatusViewController ()
 
 @property (weak, nonatomic) SSTStatusView *statusView;
 
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation SSTViewController {
+@implementation SSTStatusViewController {
     BOOL isBlueDown;
 }
 

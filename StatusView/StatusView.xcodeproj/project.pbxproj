@@ -17,7 +17,7 @@
 		260AD43B17468A2A00B15CF0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 260AD43A17468A2A00B15CF0 /* Default@2x.png */; };
 		260AD43D17468A2A00B15CF0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 260AD43C17468A2A00B15CF0 /* Default-568h@2x.png */; };
 		260AD44017468A2A00B15CF0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AD43E17468A2A00B15CF0 /* MainStoryboard.storyboard */; };
-		260AD44317468A2A00B15CF0 /* SSTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260AD44217468A2A00B15CF0 /* SSTViewController.m */; };
+		260AD44317468A2A00B15CF0 /* SSTStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260AD44217468A2A00B15CF0 /* SSTStatusViewController.m */; };
 		260AD44B17468A3700B15CF0 /* SSTStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 260AD44A17468A3700B15CF0 /* SSTStatusView.m */; };
 		260AD44D17468A4600B15CF0 /* SSTStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 260AD44C17468A4600B15CF0 /* SSTStatusView.xib */; };
 /* End PBXBuildFile section */
@@ -37,8 +37,8 @@
 		260AD43A17468A2A00B15CF0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		260AD43C17468A2A00B15CF0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		260AD43F17468A2A00B15CF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		260AD44117468A2A00B15CF0 /* SSTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTViewController.h; sourceTree = "<group>"; };
-		260AD44217468A2A00B15CF0 /* SSTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTViewController.m; sourceTree = "<group>"; };
+		260AD44117468A2A00B15CF0 /* SSTStatusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTStatusViewController.h; sourceTree = "<group>"; };
+		260AD44217468A2A00B15CF0 /* SSTStatusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTStatusViewController.m; sourceTree = "<group>"; };
 		260AD44917468A3700B15CF0 /* SSTStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTStatusView.h; sourceTree = "<group>"; };
 		260AD44A17468A3700B15CF0 /* SSTStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTStatusView.m; sourceTree = "<group>"; };
 		260AD44C17468A4600B15CF0 /* SSTStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSTStatusView.xib; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 				260AD43517468A2A00B15CF0 /* SSTAppDelegate.h */,
 				260AD43617468A2A00B15CF0 /* SSTAppDelegate.m */,
 				260AD43E17468A2A00B15CF0 /* MainStoryboard.storyboard */,
-				260AD44117468A2A00B15CF0 /* SSTViewController.h */,
-				260AD44217468A2A00B15CF0 /* SSTViewController.m */,
+				260AD44117468A2A00B15CF0 /* SSTStatusViewController.h */,
+				260AD44217468A2A00B15CF0 /* SSTStatusViewController.m */,
 				260AD44917468A3700B15CF0 /* SSTStatusView.h */,
 				260AD44A17468A3700B15CF0 /* SSTStatusView.m */,
 				260AD44C17468A4600B15CF0 /* SSTStatusView.xib */,
@@ -185,7 +185,7 @@
 			files = (
 				260AD43317468A2A00B15CF0 /* main.m in Sources */,
 				260AD43717468A2A00B15CF0 /* SSTAppDelegate.m in Sources */,
-				260AD44317468A2A00B15CF0 /* SSTViewController.m in Sources */,
+				260AD44317468A2A00B15CF0 /* SSTStatusViewController.m in Sources */,
 				260AD44B17468A3700B15CF0 /* SSTStatusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

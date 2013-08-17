@@ -34,4 +34,7 @@
    <FileRef
       location = "group:GrowingImageView/GrowingImageView.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Unwinding/Unwinding.xcodeproj">
+   </FileRef>
 </Workspace>
