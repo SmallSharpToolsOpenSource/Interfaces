@@ -57,3 +57,22 @@ TextAllTheThings
 
 An experiment to add links and other details to text fields.
 
+Growing Image View
+----------------
+
+Base class to allow an UIImageView to fill the screen with a larger image with a simple
+tap gesture.
+
+Unwinding
+----------------
+
+Programmatically perform an unwind segue without setting it up in a storyboard.
+
+License: BSD  
+
+------
+
+Brennan Stehling  
+[SmallSharpTools](http://www.smallsharptools.com/)  
+[@smallsharptools](https://alpha.app.net/smallsharptools) (App.net)  
+[@smallsharptools](https://twitter.com/smallsharptools) (Twitter)  

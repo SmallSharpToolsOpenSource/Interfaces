@@ -71,6 +71,10 @@ disturbed due to a change in the value when the device is rotated and constant i
 The boolean value helps to assert the proper value and maintains the intended behavior.
 
 License: BSD  
-Credits: Brennan Stehling  
-Website: [http://www.smallsharptools.com/](http://www.smallsharptools.com/)
 
+------
+
+Brennan Stehling  
+[SmallSharpTools](http://www.smallsharptools.com/)  
+[@smallsharptools](https://alpha.app.net/smallsharptools) (App.net)  
+[@smallsharptools](https://twitter.com/smallsharptools) (Twitter)  

@@ -104,9 +104,11 @@ MAAssert is that the NSAssert macro references `self` which becomes a problem
 with ARC when using blocks which is common with Grand Central Dispatch which
 is used commonly.
 
+License: BSD  
+
 ------
 
 Brennan Stehling  
-SmallSharpTools  
-https://alpha.app.net/smallsharptools
-
+[SmallSharpTools](http://www.smallsharptools.com/)  
+[@smallsharptools](https://alpha.app.net/smallsharptools) (App.net)  
+[@smallsharptools](https://twitter.com/smallsharptools) (Twitter)  
