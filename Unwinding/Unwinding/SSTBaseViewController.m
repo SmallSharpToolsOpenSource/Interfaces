@@ -15,9 +15,6 @@
 @implementation SSTBaseViewController
 
 - (UIViewController *)parentOrPresentingViewController {
-    [self canPerformUnwindSegueAction:<#(SEL)#> fromViewController:<#(UIViewController *)#> withSender:<#(id)#>]
-    
-    
     return self.parentViewController ? self.parentViewController : self.presentingViewController;
 }
 
