@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26CC41B717C2B90200D05469 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CC41B617C2B90200D05469 /* UIKit.framework */; };
+		26CC41B917C2B90200D05469 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CC41B817C2B90200D05469 /* Foundation.framework */; };
+		26CC41BB17C2B90200D05469 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CC41BA17C2B90200D05469 /* CoreGraphics.framework */; };
+		26CC41C117C2B90200D05469 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26CC41BF17C2B90200D05469 /* InfoPlist.strings */; };
+		26CC41C317C2B90200D05469 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC41C217C2B90200D05469 /* main.m */; };
+		26CC41C717C2B90200D05469 /* SSTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC41C617C2B90200D05469 /* SSTAppDelegate.m */; };
+		26CC41C917C2B90200D05469 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 26CC41C817C2B90200D05469 /* Default.png */; };
+		26CC41CB17C2B90200D05469 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26CC41CA17C2B90200D05469 /* Default@2x.png */; };
+		26CC41CD17C2B90200D05469 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26CC41CC17C2B90200D05469 /* Default-568h@2x.png */; };
+		26CC41D017C2B90200D05469 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CC41CE17C2B90200D05469 /* MainStoryboard.storyboard */; };
+		26CC41D317C2B90200D05469 /* SSTKeyboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC41D217C2B90200D05469 /* SSTKeyboardingViewController.m */; };
+		26CC41DB17C2B93F00D05469 /* SSTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC41DA17C2B93F00D05469 /* SSTBaseViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		26CC41B317C2B90200D05469 /* Keyboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CC41B617C2B90200D05469 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26CC41B817C2B90200D05469 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26CC41BA17C2B90200D05469 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26CC41BE17C2B90200D05469 /* Keyboarding-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Keyboarding-Info.plist"; sourceTree = "<group>"; };
+		26CC41C017C2B90200D05469 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26CC41C217C2B90200D05469 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26CC41C417C2B90200D05469 /* Keyboarding-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keyboarding-Prefix.pch"; sourceTree = "<group>"; };
+		26CC41C517C2B90200D05469 /* SSTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTAppDelegate.h; sourceTree = "<group>"; };
+		26CC41C617C2B90200D05469 /* SSTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTAppDelegate.m; sourceTree = "<group>"; };
+		26CC41C817C2B90200D05469 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		26CC41CA17C2B90200D05469 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		26CC41CC17C2B90200D05469 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		26CC41CF17C2B90200D05469 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		26CC41D117C2B90200D05469 /* SSTKeyboardingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSTKeyboardingViewController.h; sourceTree = "<group>"; };
+		26CC41D217C2B90200D05469 /* SSTKeyboardingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSTKeyboardingViewController.m; sourceTree = "<group>"; };
+		26CC41D917C2B93F00D05469 /* SSTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTBaseViewController.h; sourceTree = "<group>"; };
+		26CC41DA17C2B93F00D05469 /* SSTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTBaseViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26CC41B017C2B90200D05469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CC41B717C2B90200D05469 /* UIKit.framework in Frameworks */,
+				26CC41B917C2B90200D05469 /* Foundation.framework in Frameworks */,
+				26CC41BB17C2B90200D05469 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26CC41AA17C2B90200D05469 = {
+			isa = PBXGroup;
+			children = (
+				26CC41BC17C2B90200D05469 /* Keyboarding */,
+				26CC41B517C2B90200D05469 /* Frameworks */,
+				26CC41B417C2B90200D05469 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26CC41B417C2B90200D05469 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26CC41B317C2B90200D05469 /* Keyboarding.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26CC41B517C2B90200D05469 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26CC41B617C2B90200D05469 /* UIKit.framework */,
+				26CC41B817C2B90200D05469 /* Foundation.framework */,
+				26CC41BA17C2B90200D05469 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26CC41BC17C2B90200D05469 /* Keyboarding */ = {
+			isa = PBXGroup;
+			children = (
+				26CC41BD17C2B90200D05469 /* Supporting Files */,
+				26CC41C517C2B90200D05469 /* SSTAppDelegate.h */,
+				26CC41C617C2B90200D05469 /* SSTAppDelegate.m */,
+				26CC41CE17C2B90200D05469 /* MainStoryboard.storyboard */,
+				26CC41D117C2B90200D05469 /* SSTKeyboardingViewController.h */,
+				26CC41D217C2B90200D05469 /* SSTKeyboardingViewController.m */,
+				26CC41D917C2B93F00D05469 /* SSTBaseViewController.h */,
+				26CC41DA17C2B93F00D05469 /* SSTBaseViewController.m */,
+			);
+			path = Keyboarding;
+			sourceTree = "<group>";
+		};
+		26CC41BD17C2B90200D05469 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26CC41BE17C2B90200D05469 /* Keyboarding-Info.plist */,
+				26CC41BF17C2B90200D05469 /* InfoPlist.strings */,
+				26CC41C217C2B90200D05469 /* main.m */,
+				26CC41C417C2B90200D05469 /* Keyboarding-Prefix.pch */,
+				26CC41C817C2B90200D05469 /* Default.png */,
+				26CC41CA17C2B90200D05469 /* Default@2x.png */,
+				26CC41CC17C2B90200D05469 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26CC41B217C2B90200D05469 /* Keyboarding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26CC41D617C2B90200D05469 /* Build configuration list for PBXNativeTarget "Keyboarding" */;
+			buildPhases = (
+				26CC41AF17C2B90200D05469 /* Sources */,
+				26CC41B017C2B90200D05469 /* Frameworks */,
+				26CC41B117C2B90200D05469 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keyboarding;
+			productName = Keyboarding;
+			productReference = 26CC41B317C2B90200D05469 /* Keyboarding.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26CC41AB17C2B90200D05469 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SST;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "SmallSharpTools LLC";
+			};
+			buildConfigurationList = 26CC41AE17C2B90200D05469 /* Build configuration list for PBXProject "Keyboarding" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26CC41AA17C2B90200D05469;
+			productRefGroup = 26CC41B417C2B90200D05469 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26CC41B217C2B90200D05469 /* Keyboarding */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26CC41B117C2B90200D05469 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CC41C117C2B90200D05469 /* InfoPlist.strings in Resources */,
+				26CC41C917C2B90200D05469 /* Default.png in Resources */,
+				26CC41CB17C2B90200D05469 /* Default@2x.png in Resources */,
+				26CC41CD17C2B90200D05469 /* Default-568h@2x.png in Resources */,
+				26CC41D017C2B90200D05469 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26CC41AF17C2B90200D05469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CC41C317C2B90200D05469 /* main.m in Sources */,
+				26CC41C717C2B90200D05469 /* SSTAppDelegate.m in Sources */,
+				26CC41D317C2B90200D05469 /* SSTKeyboardingViewController.m in Sources */,
+				26CC41DB17C2B93F00D05469 /* SSTBaseViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		26CC41BF17C2B90200D05469 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26CC41C017C2B90200D05469 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26CC41CE17C2B90200D05469 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26CC41CF17C2B90200D05469 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26CC41D417C2B90200D05469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		26CC41D517C2B90200D05469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26CC41D717C2B90200D05469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Keyboarding/Keyboarding-Prefix.pch";
+				INFOPLIST_FILE = "Keyboarding/Keyboarding-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26CC41D817C2B90200D05469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Keyboarding/Keyboarding-Prefix.pch";
+				INFOPLIST_FILE = "Keyboarding/Keyboarding-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26CC41AE17C2B90200D05469 /* Build configuration list for PBXProject "Keyboarding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26CC41D417C2B90200D05469 /* Debug */,
+				26CC41D517C2B90200D05469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26CC41D617C2B90200D05469 /* Build configuration list for PBXNativeTarget "Keyboarding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26CC41D717C2B90200D05469 /* Debug */,
+				26CC41D817C2B90200D05469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26CC41AB17C2B90200D05469 /* Project object */;
+}

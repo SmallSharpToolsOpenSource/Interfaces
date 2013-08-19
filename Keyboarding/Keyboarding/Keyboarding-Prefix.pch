@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'Keyboarding' target in the 'Keyboarding' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#ifndef NS_BLOCK_ASSERTIONS
+
+// Credit: http://sstools.co/maassert
+#define MAAssert(expression, ...) \
+do { \
+if(!(expression)) { \
+NSLog(@"Assertion failure: %s in %s on line %s:%d. %@", #expression, __func__, __FILE__, __LINE__, [NSString stringWithFormat: @"" __VA_ARGS__]); \
+abort(); \
+} \
+} while(0)
+
+#else
+
+#define MAAssert(expression, ...)
+
+#endif

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="exg-FA-rhY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Keyboarding View Controller - Keyboarding-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="SSTKeyboardingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="440"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="720-MA-86F">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pen-3e-X1v" userLabel="Container View">
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-Oq-PXM">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pX1-pt-fs7">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7sZ-4x-SRE">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAN-sv-eT6">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHC-hT-fL4">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfK-5A-tU9">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZA-7v-Kwt">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sI2-XR-zeM">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F72-Jx-LdD">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xrr-cS-Rbk">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="330-nJ-Kfj">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="330-nJ-Kfj" firstAttribute="top" secondItem="Xrr-cS-Rbk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0q9-wk-0r3"/>
+                                            <constraint firstItem="7sZ-4x-SRE" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6jK-H6-2GV"/>
+                                            <constraint firstItem="F72-Jx-LdD" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AEe-Tz-N0r"/>
+                                            <constraint firstAttribute="trailing" secondItem="rfK-5A-tU9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ebm-Hz-Wg4"/>
+                                            <constraint firstItem="rHC-hT-fL4" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="F6P-tu-b5o"/>
+                                            <constraint firstItem="KAN-sv-eT6" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="FUC-o4-rwi"/>
+                                            <constraint firstItem="wu2-Oq-PXM" firstAttribute="top" secondItem="Pen-3e-X1v" secondAttribute="top" constant="20" symbolic="YES" type="default" id="O3g-KG-Bsk"/>
+                                            <constraint firstItem="F72-Jx-LdD" firstAttribute="top" secondItem="sI2-XR-zeM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OCv-Xe-U2u"/>
+                                            <constraint firstItem="sI2-XR-zeM" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OuO-8y-7Dp"/>
+                                            <constraint firstItem="wu2-Oq-PXM" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RDf-nQ-NwS"/>
+                                            <constraint firstItem="330-nJ-Kfj" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RgK-mJ-rlN"/>
+                                            <constraint firstAttribute="trailing" secondItem="KAN-sv-eT6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Sl5-ws-4wT"/>
+                                            <constraint firstItem="KAN-sv-eT6" firstAttribute="top" secondItem="7sZ-4x-SRE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TYf-wC-Tdx"/>
+                                            <constraint firstItem="rfK-5A-tU9" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UlU-ev-9bs"/>
+                                            <constraint firstItem="EZA-7v-Kwt" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Uvw-4O-mAY"/>
+                                            <constraint firstItem="rHC-hT-fL4" firstAttribute="top" secondItem="KAN-sv-eT6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="W73-7s-HO2"/>
+                                            <constraint firstAttribute="trailing" secondItem="wu2-Oq-PXM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Y5H-CI-MKk"/>
+                                            <constraint firstAttribute="trailing" secondItem="sI2-XR-zeM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a9P-9j-Zer"/>
+                                            <constraint firstAttribute="height" constant="440" type="user" id="cXM-R5-QTO"/>
+                                            <constraint firstItem="EZA-7v-Kwt" firstAttribute="top" secondItem="rfK-5A-tU9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dDk-X3-JMN"/>
+                                            <constraint firstAttribute="trailing" secondItem="EZA-7v-Kwt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="eIS-ZR-Yoj"/>
+                                            <constraint firstItem="sI2-XR-zeM" firstAttribute="top" secondItem="EZA-7v-Kwt" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="f6S-j0-y0e"/>
+                                            <constraint firstItem="pX1-pt-fs7" firstAttribute="top" secondItem="wu2-Oq-PXM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fBp-27-zyg"/>
+                                            <constraint firstItem="7sZ-4x-SRE" firstAttribute="top" secondItem="pX1-pt-fs7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fbx-13-fdf"/>
+                                            <constraint firstItem="rfK-5A-tU9" firstAttribute="top" secondItem="rHC-hT-fL4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gKs-1y-pcS"/>
+                                            <constraint firstAttribute="trailing" secondItem="F72-Jx-LdD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gOe-qb-mrm"/>
+                                            <constraint firstItem="Xrr-cS-Rbk" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hMD-gW-tYh"/>
+                                            <constraint firstAttribute="trailing" secondItem="pX1-pt-fs7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kTC-F9-4Mr"/>
+                                            <constraint firstAttribute="trailing" secondItem="330-nJ-Kfj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="l35-Oq-Dyo"/>
+                                            <constraint firstItem="Xrr-cS-Rbk" firstAttribute="top" secondItem="F72-Jx-LdD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ocx-OT-kBz"/>
+                                            <constraint firstAttribute="trailing" secondItem="rHC-hT-fL4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pAr-mO-3Y9"/>
+                                            <constraint firstAttribute="trailing" secondItem="7sZ-4x-SRE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vgD-Lx-C6b"/>
+                                            <constraint firstItem="pX1-pt-fs7" firstAttribute="leading" secondItem="Pen-3e-X1v" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xmJ-St-sD3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xrr-cS-Rbk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="znR-HB-9p5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="440" type="user" id="42b-3j-zMf"/>
+                                    <constraint firstItem="Pen-3e-X1v" firstAttribute="bottom" secondItem="720-MA-86F" secondAttribute="bottom" type="default" id="Qoc-MB-WBF"/>
+                                    <constraint firstItem="Pen-3e-X1v" firstAttribute="top" secondItem="720-MA-86F" secondAttribute="top" type="default" id="ZBn-GW-Klm"/>
+                                    <constraint firstItem="Pen-3e-X1v" firstAttribute="centerX" secondItem="720-MA-86F" secondAttribute="centerX" type="default" id="aWi-Ee-Aay"/>
+                                    <constraint firstItem="Pen-3e-X1v" firstAttribute="trailing" secondItem="720-MA-86F" secondAttribute="trailing" type="default" id="grt-82-lxk"/>
+                                    <constraint firstItem="Pen-3e-X1v" firstAttribute="leading" secondItem="720-MA-86F" secondAttribute="leading" type="default" id="w00-9Q-M1b"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="720-MA-86F" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="00f-u2-3eB"/>
+                            <constraint firstItem="720-MA-86F" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="WzX-OM-IQ8"/>
+                            <constraint firstItem="720-MA-86F" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="nsR-FE-yaT"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="W0H-My-aMc" appends="YES" id="djG-Oo-hnr"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Keyboarding" id="ySp-RB-nfK"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="720-MA-86F" id="0gl-Ic-Xm2"/>
+                        <outlet property="scrollViewHeightConstraint" destination="42b-3j-zMf" id="9iD-rM-LXw"/>
+                        <outlet property="tapGesture" destination="W0H-My-aMc" id="geC-oS-PFe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W0H-My-aMc">
+                    <connections>
+                        <action selector="tapGestureRecognized:" destination="2" id="iV9-09-Jnu"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="220" y="20"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tOh-dm-2El">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="exg-FA-rhY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qux-p4-fxK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="8fC-fo-k5a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3P7-ec-LrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-235" y="-12"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

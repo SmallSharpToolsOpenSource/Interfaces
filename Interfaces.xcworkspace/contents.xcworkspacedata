@@ -37,4 +37,7 @@
    <FileRef
       location = "group:Unwinding/Unwinding.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Keyboarding/Keyboarding.xcodeproj">
+   </FileRef>
 </Workspace>
