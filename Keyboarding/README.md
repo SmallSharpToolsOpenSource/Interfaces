@@ -5,5 +5,5 @@ The keyboard represents a layout challenge which is even more challenging when a
 
 Below is a video which covers how the code works and how the view hierarchy would be assembled in a storyboard.
 
-YouTube Overview: http://youtu.be/9RpCnWY5Xsc
+YouTube Overview: http://youtu.be/5BR7Xt6a6ew
 
