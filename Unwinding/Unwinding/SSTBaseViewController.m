@@ -8,6 +8,8 @@
 
 #import "SSTBaseViewController.h"
 
+#warning This code is not entirely reliable yet
+
 @interface SSTBaseViewController ()
 
 @end
