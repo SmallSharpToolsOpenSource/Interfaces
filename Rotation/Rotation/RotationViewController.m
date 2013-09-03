@@ -69,12 +69,13 @@
 
 - (UIViewController *)containerViewController {
 //    return self; // will not be suitable inside of a TabBar or Navigation Controller
-    
-    return self.parentViewController.parentViewController;
+
+    // Use parent of the parent if the current view is contained in a navbar in a tabbar
+//    return self.parentViewController.parentViewController;
     
     // Use key window to show above every other view (in TabBar and NavBar)
-//    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-//    return window.rootViewController;
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    return window.rootViewController;
 }
 
 - (void)showViewController:(UIViewController *)vc {
