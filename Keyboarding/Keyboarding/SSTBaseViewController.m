@@ -63,15 +63,17 @@
 - (void)keyboardWillShowNotification:(NSNotification *)notification {
 	CGFloat height = [self getKeyboardHeight:notification forBeginning:TRUE];
 	NSTimeInterval duration = [self getDuration:notification];
+    UIViewAnimationOptions curve = [self getAnimationCurve:notification];
     
-    [self keyboardWillShowWithHeight:height duration:duration];
+    [self keyboardWillShowWithHeight:height duration:duration curve:curve];
 }
 
 - (void)keyboardWillHideNotification:(NSNotification *)notification {
 	CGFloat height = [self getKeyboardHeight:notification forBeginning:FALSE];
 	NSTimeInterval duration = [self getDuration:notification];
+    UIViewAnimationOptions curve = [self getAnimationCurve:notification];
     
-    [self keyboardWillHideWithHeight:height duration:duration];
+    [self keyboardWillHideWithHeight:height duration:duration curve:curve];
 }
 
 - (void)keyboardDidShowNotification:(NSNotification *)notification {
@@ -85,11 +87,11 @@
 #pragma mark - Keyboard Methods to Override
 #pragma mark -
 
-- (void)keyboardWillShowWithHeight:(CGFloat)height duration:(CGFloat)duration {
+- (void)keyboardWillShowWithHeight:(CGFloat)height duration:(CGFloat)duration curve:(UIViewAnimationOptions)curve {
     // override
 }
 
-- (void)keyboardWillHideWithHeight:(CGFloat)height duration:(CGFloat)duration {
+- (void)keyboardWillHideWithHeight:(CGFloat)height duration:(CGFloat)duration curve:(UIViewAnimationOptions)curve {
     // override
 }
 
@@ -137,6 +139,27 @@
     }
     
 	return keyboardHeight;
+}
+
+- (UIViewAnimationOptions)getAnimationCurve:(NSNotification *)notification {
+	UIViewAnimationCurve curve = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    
+    switch (curve) {
+        case UIViewAnimationCurveEaseInOut:
+            return UIViewAnimationOptionCurveEaseInOut;
+            break;
+        case UIViewAnimationCurveEaseIn:
+            return UIViewAnimationOptionCurveEaseIn;
+            break;
+        case UIViewAnimationCurveEaseOut:
+            return UIViewAnimationOptionCurveEaseOut;
+            break;
+        case UIViewAnimationCurveLinear:
+            return UIViewAnimationOptionCurveLinear;
+            break;
+    }
+    
+    return kNilOptions;
 }
 
 @end

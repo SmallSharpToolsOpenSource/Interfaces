@@ -35,9 +35,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="GoldenEgg.png" id="ZGr-Im-lUc" customClass="SSTGrowingImageView">
                                         <rect key="frame" x="10" y="10" width="200" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <outlet property="fullView" destination="Y5m-1D-6vj" id="eY1-8K-hcR"/>
-                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
@@ -45,9 +42,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="GoldenEgg.png" id="yng-XN-0GC" customClass="SSTGrowingImageView">
                                 <rect key="frame" x="284" y="156" width="200" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="fullView" destination="Y5m-1D-6vj" id="Llt-lf-3aV"/>
-                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tap to grow and shrink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N1D-Hi-WEQ">
                                 <rect key="frame" x="244" y="939" width="280" height="21"/>
@@ -70,6 +64,15 @@
     <resources>
         <image name="GoldenEgg.png" width="300" height="400"/>
     </resources>
+    <classes>
+        <class className="SSTGrowingImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTGrowingImageView.h"/>
+            <relationships>
+                <relationship kind="action" name="fullImageViewTapped:"/>
+                <relationship kind="action" name="originalImageViewTapped:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

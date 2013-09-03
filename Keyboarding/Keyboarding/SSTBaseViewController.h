@@ -10,9 +10,9 @@
 
 @interface SSTBaseViewController : UIViewController
 
-- (void)keyboardWillShowWithHeight:(CGFloat)height duration:(CGFloat)duration;
+- (void)keyboardWillShowWithHeight:(CGFloat)height duration:(CGFloat)duration curve:(UIViewAnimationOptions)curve;
 
-- (void)keyboardWillHideWithHeight:(CGFloat)height duration:(CGFloat)duration;
+- (void)keyboardWillHideWithHeight:(CGFloat)height duration:(CGFloat)duration curve:(UIViewAnimationOptions)curve;
 
 - (void)keyboardDidShow;
 

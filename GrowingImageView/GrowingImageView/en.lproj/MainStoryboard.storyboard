@@ -34,9 +34,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="GoldenEgg.png" id="akf-mC-Mdt" customClass="SSTGrowingImageView">
                                         <rect key="frame" x="10" y="10" width="200" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <outlet property="fullView" destination="3" id="brT-hz-aGl"/>
-                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
@@ -44,9 +41,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="GoldenEgg.png" id="D4q-uN-cxT" customClass="SSTGrowingImageView">
                                 <rect key="frame" x="60" y="148" width="200" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="fullView" destination="3" id="m2w-vG-Z00"/>
-                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tap to grow and shrink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AgM-nV-42A">
                                 <rect key="frame" x="20" y="483" width="280" height="21"/>
@@ -62,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="312" y="-22"/>
+            <point key="canvasLocation" x="311" y="-36"/>
         </scene>
     </scenes>
     <resources>

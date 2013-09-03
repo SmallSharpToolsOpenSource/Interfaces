@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'Keyboarding' target in the 'Keyboarding' project
+// Prefix header for all source files of the 'Rotation' target in the 'Rotation' project
 //
 
 #import <Availability.h>
@@ -11,6 +11,17 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+#endif
+
+// Disables log messages when debugging is turned off
+#ifndef NDEBUG
+
+#define DebugLog(message, ...) NSLog(@"%s: " message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+
+#else
+
+#define DebugLog(message, ...)
+
 #endif
 
 #ifndef NS_BLOCK_ASSERTIONS
@@ -27,17 +38,6 @@ abort(); \
 #else
 
 #define MAAssert(expression, ...)
-
-#endif
-
-// Disables log messages when debugging is turned off
-#ifndef NDEBUG
-
-#define DebugLog(message, ...) NSLog(@"%s: " message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
-
-#else
-
-#define DebugLog(message, ...)
 
 #endif
 

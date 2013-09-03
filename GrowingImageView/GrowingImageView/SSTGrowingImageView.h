@@ -10,8 +10,6 @@
 
 @interface SSTGrowingImageView : UIImageView
 
-@property (weak, nonatomic) IBOutlet UIView *fullView;
-
 - (void)growFullImageView:(BOOL)animated;
 - (void)shrinkFullImageView:(BOOL)animated;
 

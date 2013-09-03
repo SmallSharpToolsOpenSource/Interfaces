@@ -33,7 +33,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     // ensure the required outlet is set (should view of the top view controller to fill full screen)
-    NSAssert1(self.fullView, @"Outlet is required", nil);
+//    NSAssert1(self.fullView, @"Outlet is required", nil);
 }
 
 - (IBAction)originalImageViewTapped:(id)sender {
@@ -45,7 +45,7 @@
 }
 
 - (CGRect)originalFrame {
-    CGPoint point = [self.fullView convertPoint:self.bounds.origin fromView:self];
+    CGPoint point = [self.window convertPoint:self.bounds.origin fromView:self];
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);
     
@@ -63,19 +63,19 @@
 }
 
 - (CGRect)fullFrame {
-    CGFloat width = CGRectGetWidth(self.fullView.frame);
-    CGFloat height = CGRectGetHeight(self.fullView.frame);
+    CGFloat width = CGRectGetWidth(self.window.bounds);
+    CGFloat height = CGRectGetHeight(self.window.bounds);
     
     // NOTE: Swapping the width and height is not necessary inside of a Navigation Controller (but how to detect that?)
     
     // flip dimensions for landscape
 //    if (!UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
-//        width = CGRectGetWidth(self.fullView.frame);
-//        height = CGRectGetHeight(self.fullView.frame);
+//        width = CGRectGetWidth(self.window.frame);
+//        height = CGRectGetHeight(self.window.frame);
 //    }
 //    else {
-//        width = CGRectGetHeight(self.fullView.frame);
-//        height = CGRectGetWidth(self.fullView.frame);
+//        width = CGRectGetHeight(self.window.frame);
+//        height = CGRectGetWidth(self.window.frame);
 //    }
     
     return CGRectMake(0, 0, width, height);
@@ -94,7 +94,7 @@
     UITapGestureRecognizer *fullImageViewTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fullImageViewTapped:)];
     fullImageView.gestureRecognizers = @[fullImageViewTapGestureRecognizer];
     
-    [self.fullView addSubview:fullImageView];
+    [self.window addSubview:fullImageView];
     
     CGFloat duration = animated ? 0.25 : 0.0;
     

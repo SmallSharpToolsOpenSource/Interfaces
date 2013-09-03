@@ -17,15 +17,15 @@
 
 @implementation SSTBaseViewController
 
-#pragma mark - View Lifecycle
+#pragma mark - Rotation
 #pragma mark -
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation != UIInterfaceOrientationMaskAllButUpsideDown);
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
@@ -33,7 +33,7 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return FALSE;
+    return TRUE;
 }
 
 #pragma mark - Additions
@@ -67,8 +67,6 @@
     [self addChildViewController:vc];
     [superview addSubview:vc.view];
     [self fillSubview:vc.view inSuperView:superview];
-    
-
     
     [vc didMoveToParentViewController:self];
 }
