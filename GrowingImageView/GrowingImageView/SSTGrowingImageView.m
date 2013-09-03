@@ -30,12 +30,6 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    // ensure the required outlet is set (should view of the top view controller to fill full screen)
-//    NSAssert1(self.fullView, @"Outlet is required", nil);
-}
-
 - (IBAction)originalImageViewTapped:(id)sender {
     [self growFullImageView:TRUE];
 }
@@ -45,40 +39,24 @@
 }
 
 - (CGRect)originalFrame {
-    CGPoint point = [self.window convertPoint:self.bounds.origin fromView:self];
+    CGPoint point = [self.window.rootViewController.view convertPoint:self.bounds.origin fromView:self];
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);
     
-    if ([[UIApplication sharedApplication] isStatusBarHidden]) {
-        return CGRectMake(point.x, point.y, width, height);
-    }
-    else {
-        if (!UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
-            return CGRectMake(point.x, point.y, width, height);
-        }
-        else {
-            return CGRectMake(point.x, point.y, width, height);
-        }
-    }
+    return CGRectMake(point.x, point.y, width, height);
 }
 
 - (CGRect)fullFrame {
-    CGFloat width = CGRectGetWidth(self.window.bounds);
-    CGFloat height = CGRectGetHeight(self.window.bounds);
+    CGFloat width = CGRectGetWidth(self.window.rootViewController.view.bounds);
+    CGFloat height = CGRectGetHeight(self.window.rootViewController.view.bounds);
     
-    // NOTE: Swapping the width and height is not necessary inside of a Navigation Controller (but how to detect that?)
-    
-    // flip dimensions for landscape
-//    if (!UIDeviceOrientationIsLandscape([[UIDevice currentDevice] orientation])) {
-//        width = CGRectGetWidth(self.window.frame);
-//        height = CGRectGetHeight(self.window.frame);
-//    }
-//    else {
-//        width = CGRectGetHeight(self.window.frame);
-//        height = CGRectGetWidth(self.window.frame);
-//    }
-    
-    return CGRectMake(0, 0, width, height);
+    if ([[UIApplication sharedApplication] isStatusBarHidden]) {
+        return CGRectMake(0, 0, width, height);
+    }
+    else {
+        height -= 20;
+        return CGRectMake(0, 20, width, height);
+    }
 }
 
 - (void)growFullImageView:(BOOL)animated {
@@ -94,20 +72,19 @@
     UITapGestureRecognizer *fullImageViewTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fullImageViewTapped:)];
     fullImageView.gestureRecognizers = @[fullImageViewTapGestureRecognizer];
     
-    [self.window addSubview:fullImageView];
+    self.fullImageView = fullImageView;
+    
+    [self addFullView];
     
     CGFloat duration = animated ? 0.25 : 0.0;
-    
     CGRect fullFrame = [self fullFrame];
     
     [UIView animateWithDuration:duration animations:^{
         fullImageView.frame = fullFrame;
-        fullImageView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.9];
+        fullImageView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75];
     } completion:^(BOOL finished) {
         // do nothing
     }];
-    
-    self.fullImageView = fullImageView;
 }
 
 - (void)shrinkFullImageView:(BOOL)animated {
@@ -116,8 +93,7 @@
     }
     
     if (!animated) {
-        [self.fullImageView removeFromSuperview];
-        self.fullImageView = nil; // just a redundant step to free this property
+        [self removeFullView];
     }
     
     CGRect originalFrame = [self originalFrame];
@@ -127,9 +103,17 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.fullImageView.frame = originalFrame;
     } completion:^(BOOL finished) {
-        [self.fullImageView removeFromSuperview];
-        self.fullImageView = nil; // just a redundant step to free this property
+        [self removeFullView];
     }];
+}
+
+- (void)addFullView {
+    [self.window.rootViewController.view addSubview:self.fullImageView];
+}
+
+- (void)removeFullView {
+    [self.fullImageView removeFromSuperview];
+    self.fullImageView = nil; // just a redundant step to free this property
 }
 
 @end
