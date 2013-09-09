@@ -18,6 +18,8 @@ extern CGFloat const DatePickerViewControllerAnimationDuration;
 
 @property (assign, nonatomic) CGFloat animationDuration;
 
+- (void)changeToOrientation:(UIInterfaceOrientation)orientation;
+
 - (void)showPicker:(BOOL)animated withCompletionBlock:(void (^)())completionBlock;
 
 - (void)hidePicker:(BOOL)animated withCompletionBlock:(void (^)())completionBlock;

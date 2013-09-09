@@ -38,6 +38,7 @@
 		2673405717D27066003205B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2673405917D27066003205B8 /* RotationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RotationViewController.h; sourceTree = "<group>"; };
 		2673405A17D27066003205B8 /* RotationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotationViewController.m; sourceTree = "<group>"; };
+		2691B2D417DE186B00BA7C77 /* RotationConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RotationConstants.h; sourceTree = "<group>"; };
 		26A30B3C17D55D04005AC5D8 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
 		26A30B3D17D55D04005AC5D8 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				2673404517D27066003205B8 /* Supporting Files */,
+				2691B2D417DE186B00BA7C77 /* RotationConstants.h */,
 				2673404D17D27066003205B8 /* AppDelegate.h */,
 				2673404E17D27066003205B8 /* AppDelegate.m */,
 				2673405617D27066003205B8 /* MainStoryboard.storyboard */,
