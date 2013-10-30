@@ -5,11 +5,32 @@
 //  Created by Brennan Stehling on 8/31/13.
 //  Copyright (c) 2013 SmallSharpTools LLC. All rights reserved.
 //
+// Credit for iOS 7 Flat UI detection: https://gist.github.com/steipete/6526860
+//
 
 #import "RotationViewController.h"
 
 #import "RotationConstants.h"
 #import "DatePickerViewController.h"
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+BOOL isUIKitFlatMode(void) {
+    static BOOL isUIKitFlatMode = NO;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7")) {
+            // If your app is running in legacy mode, tintColor will be nil - else it must be set to some color.
+            if (UIApplication.sharedApplication.keyWindow) {
+                isUIKitFlatMode = [UIApplication.sharedApplication.delegate.window performSelector:@selector(tintColor)] != nil;
+            } else {
+                // Possible that we're called early on (e.g. when used in a Storyboard). Adapt and use a temporary window.
+                isUIKitFlatMode = [[UIWindow new] performSelector:@selector(tintColor)] != nil;
+            }
+        }
+    });
+    return isUIKitFlatMode;
+}
 
 @interface RotationViewController () <DatePickerViewControllerDelegate>
 
@@ -23,6 +44,14 @@
 
 #pragma mark - View Lifecycle
 #pragma mark -
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (isUIKitFlatMode()) {
+        // Change color scheme to account for iOS 7 color scheme for UIPickerView (black text)
+    }
+}
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
@@ -75,7 +104,7 @@
     [actionSheet showInView:self.view];
     [actionSheet setFrame:CGRectMake(0,CGRectGetHeight(self.view.frame) - 266,CGRectGetWidth(self.view.frame), 266)];
     
-    actionSheet.superview.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.25];
+    actionSheet.superview.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
     
     self.shownActionSheet = actionSheet;
 }

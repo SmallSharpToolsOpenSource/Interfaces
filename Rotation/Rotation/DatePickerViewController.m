@@ -128,7 +128,6 @@ CGFloat const DatePickerViewControllerAnimationDuration = 0.25;
 }
 
 - (CGAffineTransform)transformForOrientation:(UIInterfaceOrientation)orientation {
-//	UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
 	if (orientation == UIInterfaceOrientationLandscapeLeft) {
 		return CGAffineTransformMakeRotation(M_PI*1.5);
 	} else if (orientation == UIInterfaceOrientationLandscapeRight) {

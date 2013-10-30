@@ -11,8 +11,8 @@
 @interface SSTKeyboardingViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewHeightConstraint;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
+@property (weak, nonatomic) IBOutlet UITextField *topTextField;
 
 @end
 
@@ -20,6 +20,17 @@
 
 #pragma mark - View Lifecycle
 #pragma mark -
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // set to black to make the status bar white, which makes no sense at all
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    if (isiOS7OrLater) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -31,8 +42,26 @@
     [super viewDidAppear:animated];
     
     MAAssert(self.scrollView, @"Outlet is required");
-    MAAssert(self.scrollViewHeightConstraint, @"Outlet is required");
 //    MAAssert(self.tapGesture, @"Outlet is required");
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    if (UIDeviceOrientationIsLandscape(toInterfaceOrientation)) {
+        DebugLog(@"Landscape");
+    }
+    else {
+        DebugLog(@"Portrait");
+    }
+    
+    // set the width of the top text field which equals the width of the rest of the text fields
+    NSLayoutConstraint *widthConstraint = [self getWidthConstraint:self.topTextField];
+    CGFloat width = CGRectGetWidth(self.view.frame) - 40;
+    widthConstraint.constant = width;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    DebugLog(@"%@", NSStringFromSelector(_cmd));
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - User Actions
@@ -57,51 +86,86 @@
 
 - (void)resizeForHiddenKeyboardWithHeight:(CGFloat)height duration:(CGFloat)duration curve:(UIViewAnimationOptions)curve {
     self.tapGesture.enabled = FALSE;
-    CGFloat constant = CGRectGetHeight(self.view.frame);
     
-    [UIView animateWithDuration:duration delay:0.0 options:curve animations:^{
-        self.scrollViewHeightConstraint.constant = constant;
-        [self.scrollView setNeedsLayout];
-        [self.scrollView layoutIfNeeded];
-        [self.scrollView setContentOffset:CGPointMake(0, 0) animated:TRUE];
-    } completion:^(BOOL finished) {
-    }];
+    CGFloat bottom = 0;
+    if (isiOS7OrLater) {
+        bottom = self.bottomLayoutGuide.length;
+    }
+    
+    UIEdgeInsets contentInset = self.scrollView.contentInset;
+    contentInset.bottom = bottom;
+    self.scrollView.contentInset = contentInset;
+    
+    UIEdgeInsets scrollIndicatorInsets = self.scrollView.scrollIndicatorInsets;
+    scrollIndicatorInsets.bottom = contentInset.bottom;
+    self.scrollView.scrollIndicatorInsets = scrollIndicatorInsets;
 }
 
 - (void)resizeForShownKeyboardWithHeight:(CGFloat)height duration:(CGFloat)duration curve:(UIViewAnimationOptions)curve {
     self.tapGesture.enabled = TRUE;
-    CGFloat constant = CGRectGetHeight(self.view.frame) - height;
     
-    CGFloat totalHeight = CGRectGetHeight([[UIScreen mainScreen] bounds]);
-    self.scrollViewHeightConstraint.constant = totalHeight;
-    [self.scrollView setNeedsLayout];
-    [self.scrollView layoutIfNeeded];
+    CGFloat bottom = 0;
+    if (isiOS7OrLater) {
+        bottom = self.bottomLayoutGuide.length;
+    }
     
-    [UIView animateWithDuration:duration delay:0.0 options:curve animations:^{
-        self.scrollViewHeightConstraint.constant = constant;
-        [self.scrollView setNeedsLayout];
-        [self.scrollView layoutIfNeeded];
-        CGRect frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 10, 320, 10);
-        [self.scrollView scrollRectToVisible:frame animated:TRUE];
-    } completion:^(BOOL finished) {
-    }];
+    UIEdgeInsets contentInset = self.scrollView.contentInset;
+    contentInset.bottom = bottom + height;
+    self.scrollView.contentInset = contentInset;
+    
+    UIEdgeInsets scrollIndicatorInsets = self.scrollView.scrollIndicatorInsets;
+    scrollIndicatorInsets.bottom = contentInset.bottom;
+    self.scrollView.scrollIndicatorInsets = scrollIndicatorInsets;
+}
+
+#pragma mark - Layout Constraints
+#pragma mark -
+
+- (NSLayoutConstraint *)getTopConstraint:(UIView *)view {
+    return [self getConstraintInView:view forLayoutAttribute:NSLayoutAttributeTop];
+}
+
+- (NSLayoutConstraint *)getWidthConstraint:(UIView *)view {
+    return [self getConstraintInView:view forLayoutAttribute:NSLayoutAttributeWidth];
+}
+
+- (NSLayoutConstraint *)getHeightConstraint:(UIView *)view {
+    return [self getConstraintInView:view forLayoutAttribute:NSLayoutAttributeHeight];
+}
+
+- (NSLayoutConstraint *)getConstraintInView:(UIView *)view forLayoutAttribute:(NSLayoutAttribute)layoutAttribute {
+    NSLayoutConstraint *foundConstraint = nil;
+    
+    if (layoutAttribute == NSLayoutAttributeTop || layoutAttribute == NSLayoutAttributeBottom ||
+        layoutAttribute == NSLayoutAttributeLeading || layoutAttribute == NSLayoutAttributeTrailing) {
+        
+        for (NSLayoutConstraint *constraint in view.superview.constraints) {
+            if (constraint.firstAttribute == layoutAttribute &&
+                [view isEqual:constraint.firstItem]) {
+                foundConstraint = constraint;
+                break;
+            }
+        }
+    }
+    else {
+        for (NSLayoutConstraint *constraint in view.constraints) {
+            if (constraint.firstAttribute == layoutAttribute &&
+                constraint.secondAttribute == NSLayoutAttributeNotAnAttribute) {
+                foundConstraint = constraint;
+                break;
+            }
+        }
+    }
+    
+    return foundConstraint;
 }
 
 #pragma mark - UITextFieldDelegate
 #pragma mark -
 
-// currently the code below does not work properly
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    DebugLog(@"%@", NSStringFromSelector(_cmd));
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-////        CGRect frame = [self.scrollView convertRect:textField.frame fromView:textField];
-//        
-//        CGPoint point = [self.view convertPoint:textField.center fromView:textField];
-//        CGRect frame = CGRectMake(point.x, point.y, 10, 10);
-//        LOG_FRAME(@"frame", frame);
-//        [self.scrollView scrollRectToVisible:frame animated:TRUE];
-//    });
-//    
-//}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.view endEditing:TRUE];
+    return TRUE;
+}
 
 @end

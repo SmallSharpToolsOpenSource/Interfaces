@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262D682F18208C18000F81C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262D682E18208C18000F81C6 /* Images.xcassets */; };
 		26CC41B717C2B90200D05469 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CC41B617C2B90200D05469 /* UIKit.framework */; };
 		26CC41B917C2B90200D05469 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CC41B817C2B90200D05469 /* Foundation.framework */; };
 		26CC41BB17C2B90200D05469 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26CC41BA17C2B90200D05469 /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262D682E18208C18000F81C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26CC41B317C2B90200D05469 /* Keyboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CC41B617C2B90200D05469 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26CC41B817C2B90200D05469 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +96,7 @@
 				26CC41D217C2B90200D05469 /* SSTKeyboardingViewController.m */,
 				26CC41D917C2B93F00D05469 /* SSTBaseViewController.h */,
 				26CC41DA17C2B93F00D05469 /* SSTBaseViewController.m */,
+				262D682E18208C18000F81C6 /* Images.xcassets */,
 			);
 			path = Keyboarding;
 			sourceTree = "<group>";
@@ -141,6 +144,11 @@
 				CLASSPREFIX = SST;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "SmallSharpTools LLC";
+				TargetAttributes = {
+					26CC41B217C2B90200D05469 = {
+						DevelopmentTeam = M3FCT79SM9;
+					};
+				};
 			};
 			buildConfigurationList = 26CC41AE17C2B90200D05469 /* Build configuration list for PBXProject "Keyboarding" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -167,6 +175,7 @@
 				26CC41C117C2B90200D05469 /* InfoPlist.strings in Resources */,
 				26CC41C917C2B90200D05469 /* Default.png in Resources */,
 				26CC41CB17C2B90200D05469 /* Default@2x.png in Resources */,
+				262D682F18208C18000F81C6 /* Images.xcassets in Resources */,
 				26CC41CD17C2B90200D05469 /* Default-568h@2x.png in Resources */,
 				26CC41D017C2B90200D05469 /* MainStoryboard.storyboard in Resources */,
 			);
@@ -267,9 +276,14 @@
 		26CC41D717C2B90200D05469 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Keyboarding/Keyboarding-Prefix.pch";
 				INFOPLIST_FILE = "Keyboarding/Keyboarding-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -278,9 +292,18 @@
 		26CC41D817C2B90200D05469 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Keyboarding/Keyboarding-Prefix.pch";
 				INFOPLIST_FILE = "Keyboarding/Keyboarding-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"-DNDEBUG",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -305,6 +328,7 @@
 				26CC41D817C2B90200D05469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
