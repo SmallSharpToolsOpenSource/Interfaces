@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F60EC5B9-59D7-45D6-AF67-07631C6FFC37</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Interfaces</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F10AE40C-E01D-4381-BCBC-7967A25A1592</key>
+		<string>ssh://github.com/brennanMKE/Interfaces.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Interfaces.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F10AE40C-E01D-4381-BCBC-7967A25A1592</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/brennanMKE/Interfaces.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F10AE40C-E01D-4381-BCBC-7967A25A1592</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F10AE40C-E01D-4381-BCBC-7967A25A1592</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Interfaces</string>
+		</dict>
+	</array>
+</dict>
+</plist>

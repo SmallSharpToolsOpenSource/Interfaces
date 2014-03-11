@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BbQ-sT-ME5">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Busy Text View Controller - Busy Input-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="SSTBusyTextViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Kk-UY-zV5"/>
+                        <viewControllerLayoutGuide type="bottom" id="9UJ-Pb-H9u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVn-HL-3Re" userLabel="Input View">
+                                <rect key="frame" x="20" y="72" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text Goes Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDm-fg-bSW">
+                                        <rect key="frame" x="5" y="5" width="270" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="okk-gd-LJa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iDm-fg-bSW" secondAttribute="bottom" constant="5" id="TFD-ZX-VGY"/>
+                                    <constraint firstItem="iDm-fg-bSW" firstAttribute="top" secondItem="LVn-HL-3Re" secondAttribute="top" constant="5" id="Ta6-hB-B4N"/>
+                                    <constraint firstItem="iDm-fg-bSW" firstAttribute="leading" secondItem="LVn-HL-3Re" secondAttribute="leading" constant="5" id="cgy-ch-yPk"/>
+                                    <constraint firstAttribute="trailing" secondItem="iDm-fg-bSW" secondAttribute="trailing" constant="5" id="mvi-iB-lKm"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wz-W7-HYo">
+                                <rect key="frame" x="20" y="120" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Toggle Busy">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fdu-8W-yir"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Wz-W7-HYo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="8LX-Um-hhs"/>
+                            <constraint firstItem="LVn-HL-3Re" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="j2L-MA-bDN"/>
+                            <constraint firstAttribute="trailing" secondItem="4Wz-W7-HYo" secondAttribute="trailing" constant="20" id="mBj-39-b6l"/>
+                            <constraint firstItem="4Wz-W7-HYo" firstAttribute="top" secondItem="LVn-HL-3Re" secondAttribute="bottom" constant="8" id="wCF-KM-NTH"/>
+                            <constraint firstItem="LVn-HL-3Re" firstAttribute="top" secondItem="6Kk-UY-zV5" secondAttribute="bottom" constant="20" symbolic="YES" id="x4e-j2-Vgk"/>
+                            <constraint firstAttribute="trailing" secondItem="LVn-HL-3Re" secondAttribute="trailing" constant="20" id="yMy-xz-sL9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Busy Input" id="0Eg-kL-I0x"/>
+                    <connections>
+                        <outlet property="textField" destination="iDm-fg-bSW" id="KKU-sG-r1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498" y="99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ItY-CZ-0P7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BbQ-sT-ME5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZYs-iu-QcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1Wc-rX-n36"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCL-sg-aG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="99"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -5,7 +5,16 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
+      location = "group:BusyTextField/BusyTextField.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TapSlider/TapSlider.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SideBar/SideBar.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ListView/../Slider/Slider.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ListView/ListView.xcodeproj">
